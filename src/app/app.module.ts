@@ -8,6 +8,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { LoginComponent } from './login/login.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { TableauComponent } from './components/tableau/tableau.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TableauComponent } from './components/tableau/tableau.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
