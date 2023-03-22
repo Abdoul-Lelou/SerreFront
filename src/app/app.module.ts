@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TableauhistoComponent } from './tableauhisto/tableauhisto.component';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SideBarComponent,
     LoginComponent,
     DashbordComponent,
-    TableauComponent
+    TableauComponent,
+    TableauhistoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

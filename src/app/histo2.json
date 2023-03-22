@@ -1,0 +1,33 @@
+[
+    {
+    
+       
+        "date": "12/12/2023",
+        "ensol": "90 Lu",  
+        "humiditeSol": "20%"
+    },
+    {
+        "date": "23/12/2023",
+        "ensol": "50 Lu",
+          "humiditeSol": "8%"
+       
+    },
+    { 
+        "date": "24/12/2023",
+        "ensol": "35 Lu",
+        "humiditeSol": "18%"
+    },
+    { 
+        "date": "20/12/2023",
+        "ensol": "29 Lu",
+        "humiditeSol": "28%"
+    }
+
+    ,
+    { 
+        "date": "20/12/2023",
+        "ensol": "37°C",
+        "humiditeSol": "28%"
+    }
+
+]

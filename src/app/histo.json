@@ -1,0 +1,33 @@
+[
+    {
+    
+       
+        "date": "12/12/2023",
+        "temperature": "47°C",  
+        "humidite": "20%"
+    },
+    {
+        "date": "23/12/2023",
+        "temperature": "17°C",
+          "humidite": "8%"
+       
+    },
+    { 
+        "date": "24/12/2023",
+        "temperature": "27°C",
+        "humidite": "18%"
+    },
+    { 
+        "date": "20/12/2023",
+        "temperature": "37°C",
+        "humidite": "28%"
+    }
+
+    ,
+    { 
+        "date": "20/12/2023",
+        "temperature": "37°C",
+        "humidite": "28%"
+    }
+
+]
