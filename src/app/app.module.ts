@@ -12,6 +12,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableauhistoComponent } from './tableauhisto/tableauhisto.component';
  import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
+
 
 @NgModule({
   declarations: [
@@ -20,18 +23,12 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SideBarComponent,
     LoginComponent,
     DashbordComponent,
-    TableauComponent,
-    TableauhistoComponent
+    TableauComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    Ng2SearchPipeModule,
-    NgxPaginationModule,
-    
-    
-  
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

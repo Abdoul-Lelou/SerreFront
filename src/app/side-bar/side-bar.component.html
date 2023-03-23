@@ -1,1 +1,97 @@
-<p>side-bar works!</p>
+<!--Main Navigation-->
+<header class="z-3 position-absolute p-5 rounded-3">
+    <!-- Sidebar -->
+    
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white  " style="color: #D1F4F0;">
+            <div class="position-sticky border border-primary h-100">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                  <img src="../../assets/logo.jpeg" alt="" width="130" height="130" srcset="" class="rounded-circle m-auto">  
+                <a
+                    href="#"
+                    class="list-group-item list-group-item-action py-2 ripple"
+                    aria-current="true"
+                >
+                    <!-- <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span> -->
+                </a>
+                <span href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
+                    <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">  
+                </span>
+                <span (click)="switchToit()"  class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
+                    <img src="../../assets/roofing.png" alt="" width="90" height="90" srcset="" class="rounded-circle">  
+                </span>
+                <a href="#" class="m-auto text text-success" (click)="switchToit()" >
+                    <span class="material-symbols-outlined" *ngIf="switchRoof" style="color:green">toggle_on</span>
+                    <span class="material-symbols-outlined " *ngIf="!switchRoof" style="color:red">toggle_off</span>
+                </a>
+                <!-- <a href="#" class="m-auto text text-danger"><span class="material-symbols-outlined ">toggle_off</span></a> -->
+                
+                <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple">
+                    <span class="material-symbols-outlined m-auto">toggle_on</span>
+                    <<span class="material-symbols-outlined">toggle_off</span>
+
+                 </a> --> 
+
+
+                <div class="mt-4 mb-4 shadow" style="color: aqua;">
+                    <span (click)="switchFan()" *ngIf="fan"  class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
+                        <img src="../../assets/fan-on.gif" alt="" width="90" height="90" srcset="" class="rounded-circle">  
+                    </span>
+                    <span (click)="switchFan()" *ngIf="!fan" class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
+                        <img src="../../assets/fan_down.jpeg" alt="" width="90" height="90" srcset="" class="rounded-circle bg-light">  
+                    </span>
+                    <a href="#" class="m-auto tetx text-primary d-flex justify-content-center" (click)="switchFan()" >
+                        <span class="material-symbols-outlined" *ngIf="fan" style="color:green">toggle_on</span>
+                        <span class="material-symbols-outlined " *ngIf="!fan" style="color:red">toggle_off</span>
+                    </a>
+                </div>
+               
+                </div>
+            </div>
+        </nav>
+
+    <!-- Sidebar -->
+  
+    <!-- Navbar -->
+    
+        
+    
+    <!-- Navbar -->
+</header>
+  <!--Main Navigation-->
+  <nav id="main-navbar " class="navbar navbar-expand-lg w-100 navbar-light bg-white d-flex justify-content-center  border border-danger">
+    <!-- Container wrapper -->
+    <div class="container-sm border w-50 border-danger">
+      <!-- Toggle button -->
+
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <span class="material-symbols-outlined"  style=" size: 40px;">info</span>
+      </a>
+
+      <a class="navbar-brand" href="#">
+        <span class="material-symbols-outlined"  style=" size: 40px;">engineering</span>
+      </a>
+
+      <a class="navbar-brand" href="#">
+        <span class="material-symbols-outlined"  style=" size: 40px;">sync_lock</span>
+      </a>
+
+      <a class="navbar-brand" href="#">
+        <span class="material-symbols-outlined"  style=" size: 40px;">logout</span>
+      </a>
+      <!-- Search form -->
+      
+
+      <!-- Right links -->
+    
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!--Main layout-->
+  <main style="margin-top: 58px;">
+    <div class="container pt-4">
+        <app-dashbord></app-dashbord>
+    </div>
+  </main>
+  <!--Main layout-->
