@@ -1,1 +1,137 @@
-<p>dashbord works!</p>
+<!-- Conteneur principal dashboard -->
+<div class="d-flex flex-column p-2 bd-highlight" id="conteneurDash"> 
+ 
+    <div class="d-flex flex-column" id="BlocHaute">
+        <h6>Données de la serre à l’instant</h6>
+        <div class="d-flex flex-row" id="sectionsParam">
+            <!-- section Temperature -->
+              <div class="d-flex flex-column"  id="sectTemp">
+                  <p>Température enceinte</p>
+                  <div class="d-flex flex-row" id="contCircularTempetIconTemp">
+                    <img [src]="image3Histo" alt="" class="iconeTemp">
+                    <p class="cirTemp">circularProgressBar</p>
+                  </div>
+              </div>
+            <!-- section Humidité -->
+              <div class="d-flex flex-column"  id="sectHum">
+                  <p>Humidité enceinte</p>
+                  <div class="d-flex flex-row" id="contCircularTempetIconTemp">
+                    <img [src]="image4Histo" alt="" class="iconHumEns">
+                    <p class="cirTemp">circularProgressBar</p>
+                  </div>
+              </div>
+            <!-- section Humidité sol -->
+              <div class="d-flex flex-column"  id="sectHumSol">
+                  <p>Humidité du sol</p>
+                  <div class="d-flex flex-row" id="contCircularTempetIconTemp">
+                    <img [src]="image2Histo" alt="" class="iconHumEns">
+                    <p class="cirTemp">circularProgressBar</p>
+                  </div>
+              </div>
+            <!-- section Luminosité -->
+              <div class="d-flex flex-column"  id="sectLum">
+                  <p>Luminosité dans la serre</p>
+                  <div class="d-flex flex-row" id="contCircularTempetIconTemp">
+                    <img [src]="image1Histo" alt="" class="iconHumEns">
+                    <p class="cirTemp">circularProgressBar</p>
+                  </div>
+              </div>
+        </div>
+
+
+    </div>  
+    <!-- Fin du bloc haut/ debut bloc bas-->
+    <div class="d-flex flex-row" id="Blocbasse">
+      <!-- Colone gauche (historique) -->
+        <div class="d-flex flex-column" id="clonGauche">
+            <p>Historique des données</p>
+            <div class="d-flex flex-column" id="ll">
+              <div class="sec1" id="noir1">
+                  <img [src]="image1Histo" alt="" class="iconHumEns">
+                  <img [src]="image2Histo" alt="" class="iconHumEns">
+                  <div class="sec1-layer_top sec1-layer_scale">
+                    <div class="sec1-text">Historique Hum_Sol(%)<br>Ensol(%)</div>
+                  </div>
+              </div>
+              <div class="sec2" id="noir2">
+                  <img [src]="image3Histo" alt="" class="iconeTemp">
+                  <img [src]="image4Histo" alt="" class="iconHumEns">
+                  <div class="sec2-layer_top sec2-layer_scale">
+                    <div class="sec2-text">Historique Temp(°c) <br>Hum(%)</div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <!-- Colone centre (lampe, alarme,arrosage) -->
+        <div class="d-flex flex-column" id="clonCentre">
+           <p>Fenetre de visualisation</p>
+           <div class="d-flex flex-row" id="contclon">
+              <div class="d-lex flex-column" id="premColon">
+                <p>Lampe de serre</p>
+                <img [src]="lampSerre" alt="" id="lampe">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                </div>
+              </div>
+              <div class="d-lex flex-column" id="deuxColon">
+                <p>Alerte sonore</p>
+                <img [src]="Alarm" alt="" id="buzzer">
+
+              </div>
+              <div class="d-lex flex-column" id="TroixColon">
+              <p>Arrosage à l'arrêt</p>
+              <img [src]="Arrosoir" alt="" id="arros">
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+              </div>
+              </div>
+           </div>
+        </div>
+        <!-- Colone Droite(portail et toit) -->
+        <div class="d-flex flex-column" id="clonDroite">
+          <p>Gestion portail et toiture</p>
+          <div class="d-flex flex-row" id="contclon">
+             <div class="d-lex flex-column" id="premColonD">
+               <p>Porte fermée</p>
+               <img [src]="portFerm" alt="" id="lampe">
+               <div class="form-check form-switch">
+                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                 <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+               </div>
+             </div>
+             <div class="d-lex flex-column" id="deuxColonD">
+               <p>Toiture fermée</p>
+               <img [src]="ToiFerm" alt="" id="buzzer">
+
+             </div>
+             
+          </div>
+        </div>
+    </div>
+
+</div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,9 @@ import { LoginComponent } from './login/login.component';
 import { DashbordComponent } from './dashbord/dashbord.component';
 import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
+
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SideBarComponent,
     LoginComponent,
     DashbordComponent,
-    TableauComponent
+    TableauComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+     NgCircleProgressModule,
+     
   ],
   providers: [],
   bootstrap: [AppComponent]
