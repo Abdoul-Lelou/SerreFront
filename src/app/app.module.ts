@@ -11,6 +11,9 @@ import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InfosSerreComponent } from './components/infos-serre/infos-serre.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
+
 
 @NgModule({
   declarations: [
@@ -25,10 +28,9 @@ import { InfosSerreComponent } from './components/infos-serre/infos-serre.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     ReactiveFormsModule,
-    FormsModule,
-    NgClass
+    NgbModule,
+    NgCircleProgressModule
 
   ],
   providers: [],

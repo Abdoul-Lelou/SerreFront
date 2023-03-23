@@ -30,9 +30,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/font-awesome/css/font-awesome.css",
+             "src/styles.scss"
+
             ],
-            "scripts": []
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
             "production": {
@@ -101,7 +104,9 @@
       }
     }
   },
+
   "cli": {
-    "analytics": false
+    "analytics": "280f2a49-af4a-4b0a-80f2-f380a5e60723"
   }
+
 }
