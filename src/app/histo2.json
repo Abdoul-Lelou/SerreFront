@@ -2,32 +2,68 @@
     {
     
        
-        "date": "12/12/2023",
+        "date": "2023-03-13",
         "ensol": "90 Lu",  
         "humiditeSol": "20%"
     },
     {
-        "date": "23/12/2023",
+        "date": "2023-03-03",
         "ensol": "50 Lu",
           "humiditeSol": "8%"
        
     },
     { 
-        "date": "24/12/2023",
+        "date": "2023-03-03",
         "ensol": "35 Lu",
         "humiditeSol": "18%"
     },
     { 
-        "date": "20/12/2023",
+        "date": "2023-03-03",
         "ensol": "29 Lu",
         "humiditeSol": "28%"
     }
 
     ,
     { 
-        "date": "20/12/2023",
+        "date": "2023-03-03",
         "ensol": "37°C",
         "humiditeSol": "28%"
+    }
+    ,
+    { 
+        "date": "2023-03-03",
+        "ensol": "35 Lu",
+        "humiditeSol": "18%"
+    },
+    { 
+        "date": "2023-03-03",
+        "ensol": "29 Lu",
+        "humiditeSol": "28%"
+    }
+
+    ,
+    { 
+        "date": "2023-03-03",
+        "ensol": "57°C",
+        "humiditeSol": "38%"
+    }
+    ,
+    { 
+        "date": "2023-03-12",
+        "ensol": "35 Lu",
+        "humiditeSol": "28%"
+    },
+    { 
+        "date": "2023-03-23",
+        "ensol": "29 Lu",
+        "humiditeSol": "28%"
+    }
+
+    ,
+    { 
+        "date": "2023-03-12",
+        "ensol": "37°C",
+        "humiditeSol": "38%"
     }
 
 ]
