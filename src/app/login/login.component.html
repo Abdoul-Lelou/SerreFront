@@ -25,7 +25,7 @@
               <header style="font-size: 30px;">Connexion</header><br>
 
               <div class="input-field">
-                
+
                 <input type="text" class="input" id="email" name="email" type="text" id="email" name="email"
                   [ngClass]="{'is-invalid':registerForm.controls['email'].errors}" placeholder=""
                   formControlName="email" type="email" id="email" name="email" required autocomplete="off">
@@ -57,22 +57,15 @@
                     Password minimun 6 caractères
                   </div>
                 </div>
-
               </div> <br>
-               <div class="text-center pt-1 mb-5 pb-1">
 
-                <button type="submit" id="button" class="btn btn-outline-info">
+               <div class="d-grid gap-2 col-10 mx-auto">
+                 <button type="submit" id="button" class="btn">
                   <span class="visually" *ngIf="!spin">Se connecter</span>
                   <span class="spinner-border spinner-border-sm" *ngIf="spin" role="status" aria-hidden="false"
                     style="color: white;"></span>
                 </button>
-              </div>
-
-             <!--  <div class="input-field">
-                <input type="submit" id="button" class="submit" *ngIf="!spin" value="Se connecter">
-                <span class="spinner-border spinner-border-sm" *ngIf="spin" role="status" aria-hidden="false"
-                style="color: white;"></span>
-            </div><br> -->
+              </div><br>
 
               <div style="text-align: center;" *ngIf="!img">
                 <p>Connecter avec un<a style="cursor: pointer; color: blue;" (click)="affich()"> RFID</a></p>
@@ -84,5 +77,4 @@
     </div>
   </form>
 </body>
-
 </html>

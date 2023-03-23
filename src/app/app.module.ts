@@ -10,6 +10,7 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfosSerreComponent } from './components/infos-serre/infos-serre.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SideBarComponent,
     LoginComponent,
     DashbordComponent,
-    TableauComponent
+    TableauComponent,
+    InfosSerreComponent
   ],
   imports: [
     BrowserModule,
