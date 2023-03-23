@@ -1,38 +1,37 @@
 
 
-<div  *ngIf="!showFormPass" class="container">
+<div  *ngIf="!showFormPass" class="container shadow-none p-3 mb-5 bg-light rounded" id="haut">
   <div class="header">
 
   </div>
-  <div class="">
-    <span class="titre">Historique des températures et humidités de la Serre</span>
+  <div class="titre">
+    Historique des températures et humidités de la Serre
   </div>
   <!-- /recherche/ -->
-  <div class="input-group">
+   <div class="input-group">
     <div class="form-outline">
-      <input type="search" id="form1" class="form-control" />
-      <label class="form-label" for="form1">Search</label>
+      <input type="date" id="form1" class="form-control" (change)="search($event)" style="border: 2px solid ; height: 70%;" />
+      <label class="form-label" for="form1"></label>
     </div>
-    <button type="button" class="btn btn-primary" style="height: 35px;">
-    recherche
-    </button>
+    
   </div>
-
-  <div class="font"></div>
+<div>
+ <!--  <div class="font"></div> -->
   <div class="d-flex justify-content-center">
-  <table class="table table-bordered rounded-3">
+  <table class="table table-bordered " style="border: 2px solid ;">
  
    <thead class="bag">
-     <tr >
-      <tr class="milieu">
-       <th class="">Parametre</th>
-       <th *ngFor="let i of histo">
-        {{i.date}}
-      </tr>
    
+    <tr style="">
+      <th scope="col">Date</th>
+      <!-- <th scope="col">Heure</th> -->
+      <th scope="col"><i class="bi bi-thermometer-half"></i> Temperature <img src="assets/tour.png" alt="" style="height: 30px; "></th>
+      <th scope="col"> <i class="bi bi-droplet-half"></i> Humidite <img src="assets/one.png" alt="" style="height: 30px; "></th>
+    
+    </tr>
    </thead>
    <tbody>
-     <tr>
+    <!--  <tr  *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
          
       <th>
         <img src="assets/one.png" alt="" style="height: 40px;">
@@ -46,17 +45,24 @@
       </th>
       <td  *ngFor="let i of histo">{{i.humidite}}</td> 
      </tr>
- 
+  -->
+  <tr *ngFor="let i of histo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+    <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
+    <td>{{i.date}}</td>
+    <td>{{i.temperature}}</td>
+    <td>{{i.humidite}}</td> 
+   
+  </tr>
    </tbody>
  </table>
- <!-- <tr *ngFor="let i of hist| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
-  <div class="mt-8 py-5">
+  <tr *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+  <div class=" pt-10">
     <div class="pagination fixed-bottom justify-content-center">
       <pagination-controls (pageChange)="p = $event"></pagination-controls> 
     </div>
   </div>
- </div> -->
-
+ </div>  
+</div>
 <div class="ff">
 
 </div>

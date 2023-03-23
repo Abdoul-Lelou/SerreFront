@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import tableauSol from '../histo2.json';
  import tableau from '../histo.json'; 
  import { Router } from '@angular/router';
@@ -19,12 +19,15 @@ date:string;
   templateUrl: './tableauhisto.component.html',
   styleUrls: ['./tableauhisto.component.scss']
 })
-export class TableauhistoComponent {
+export class TableauhistoComponent implements OnInit{
    
    histoSol: any[] = tableauSol;
    histo: any[] = tableau ;
 showFormPass =false;
-  router: any;
+searchText!: string;
+itemsperpage: number=3;
+p: number=1;
+
 
   constructor() {}
   onclick(){
@@ -33,4 +36,17 @@ showFormPass =false;
   on(){
     this.showFormPass= false; 
    }
+   ngOnInit() {
+    this.histo=tableau;
+    console.log(this.histo)
+   }
+
+   search(e:any) {
+    console.log(e.target.value)
+    this.histo=this.histo.filter((el:any)=>{
+      return el.date.toLowerCase().includes(e.target.value.toLowerCase())
+
+    })
+     
+  }
 }

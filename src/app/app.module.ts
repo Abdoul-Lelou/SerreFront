@@ -10,7 +10,8 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableauhistoComponent } from './tableauhisto/tableauhisto.component';
-
+ import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,12 @@ import { TableauhistoComponent } from './tableauhisto/tableauhisto.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
-
+    NgbModule,
+    Ng2SearchPipeModule,
+    NgxPaginationModule,
+    
+    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
