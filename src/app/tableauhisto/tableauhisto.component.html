@@ -80,7 +80,86 @@
 
 <!-- /Historique de  l'ensoleillement et humidités de sol de la Serre/// -->
 
-<div  *ngIf="showFormPass" class="container">
+
+
+<div  *ngIf="showFormPass" class="container shadow-none p-3 mb-5 bg-light rounded" id="haut">
+  <div class="header">
+
+  </div>
+  <div class="titre">
+    Historique de  l'ensoleillement et humidités de sol de la Serre
+  </div>
+  <!-- /recherche/ -->
+   <div class="input-group">
+    <div class="form-outline">
+      <input type="date" id="form1" class="form-control" (change)="search($event)" style="border: 2px solid ; height: 70%;" />
+      <label class="form-label" for="form1"></label>
+    </div>
+    
+  </div>
+<div>
+ <!--  <div class="font"></div> -->
+  <div class="d-flex justify-content-center">
+  <table class="table table-bordered " style="border: 2px solid ;">
+ 
+   <thead class="bag">
+   
+    <tr style="">
+      <th scope="col">Date</th>
+      <!-- <th scope="col">Heure</th> -->
+      <th scope="col"><i class="bi bi-thermometer-half"></i> Temperature <img src="assets/tour.png" alt="" style="height: 30px; "></th>
+      <th scope="col"> <i class="bi bi-droplet-half"></i> Humidite <img src="assets/one.png" alt="" style="height: 30px; "></th>
+    
+    </tr>
+   </thead>
+   <tbody>
+    <!--  <tr  *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+         
+      <th>
+        <img src="assets/one.png" alt="" style="height: 40px;">
+        </th>
+       <td  *ngFor="let i of histo">{{i.temperature}}</td>
+      
+     </tr>
+     <tr>
+      <th>
+        <img src="assets/tour.png" alt=""style="height: 40px;">
+      </th>
+      <td  *ngFor="let i of histo">{{i.humidite}}</td> 
+     </tr>
+  -->
+  <tr *ngFor="let ensoleillement of histoSol| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+    <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
+    <td>{{ensoleillement.date}}</td>
+    <td>{{ensoleillement.ensol}}</td>
+    <td>{{ensoleillement.humiditeSol}}</td> 
+   
+  </tr>
+   </tbody>
+ </table>
+  <tr *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+  <div class=" pt-10">
+    <div class="pagination fixed-bottom justify-content-center">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+    </div>
+  </div>
+ </div>  
+</div>
+<div class="ff">
+
+</div>
+<!-- bas -->
+<button class="bas" routerLink="/tens-hum" (click)="on()">
+  <div class="image">
+    <img src="assets/tour.png" alt="" style="height: 80px;">
+    <img src="assets/one.png" alt="" style="height: 80px;">
+</div>
+</button>
+</div>
+
+
+
+<!-- <div  *ngIf="showFormPass" class="container">
 
 <div class="header">
 
@@ -126,12 +205,12 @@
 
 <div class="ff">
 
-</div>
+</div> -->
 <!-- bas -->
-<button class="bas" routerLink="/tens_hum" (click)="on()">
+<!-- <button class="bas" routerLink="/tens_hum" (click)="on()">
   <div class="image">
 <img src="assets/tour.png" alt="" style="height: 80px;">
 <img src="assets/one.png" alt="" style="height: 80px;">
 </div>
 </button>
-</div>
+</div> -->
