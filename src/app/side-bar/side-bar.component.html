@@ -1,240 +1,103 @@
 <!--Main Navigation-->
-<header class="z-3 position-absolute p-5 rounded-3">
+<header class="z-3 position-absolute p-2 rounded-3" >
     <!-- Sidebar -->
-    
-        <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white  " style="color: #D1F4F0;">
-            <div class="position-sticky border border-primary h-100">
-                <div class="list-group list-group-flush mx-3 mt-4">
-                  <img src="../../assets/logo.jpeg" alt="" width="130" height="130" srcset="" class="rounded-circle m-auto">  
-                <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-2 ripple"
-                    aria-current="true"
-                >
-                    <!-- <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span> -->
-                </a>
-                <span href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
-                    <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">  
+
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse" style="background-color: #4b4022; ">
+        <div class="position-sticky  h-100" >
+            <div class="list-group list-group-flush mx-3 mt-2 p-4"
+                style="background-color: #D1F4F0; border-radius: 10px 0px 0 0">
+                <img src="../../assets/logo.jpeg" alt="" width="130" height="130" srcset=""
+                    class="rounded-circle m-auto mb-2">
+
+                <span href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
+                    style="background-color: #D1F4F0;">
+                    <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
                 </span>
-                <span (click)="switchToit()"  class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
-                    <img src="../../assets/roofing.png" alt="" width="90" height="90" srcset="" class="rounded-circle">  
+                <span (click)="switchToit()"
+                    class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
+                    style="background-color: #D1F4F0;">
+                    <img src="../../assets/roofing.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
                 </span>
-                <a href="#" class="m-auto text text-success" (click)="switchToit()" >
+                <a href="#" class="m-auto text text-success" (click)="switchToit()">
                     <span class="material-symbols-outlined" *ngIf="switchRoof" style="color:green">toggle_on</span>
                     <span class="material-symbols-outlined " *ngIf="!switchRoof" style="color:red">toggle_off</span>
                 </a>
-                <!-- <a href="#" class="m-auto text text-danger"><span class="material-symbols-outlined ">toggle_off</span></a> -->
-                
-                <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple">
-                    <span class="material-symbols-outlined m-auto">toggle_on</span>
-                    <<span class="material-symbols-outlined">toggle_off</span>
 
-                 </a> --> 
+            </div>
 
 
-                <div class="mt-4 mb-4 shadow" style="color: aqua;">
-                    <span (click)="switchFan()" *ngIf="fan"  class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
-                        <img src="../../assets/fan-on.gif" alt="" width="90" height="90" srcset="" class="rounded-circle">  
+
+            <div class="list-group list-group-flush mx-3 mt-4"
+                style="background-color: #D1F4F0; border-radius: 0 0 0 10px;">
+
+                <div class=" mb-2 shadow" style="background-color: #D1F4F0; ">
+                    <span (click)="switchFan()" *ngIf="fan" style="background-color: #D1F4F0;"
+                        class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
+                        <img src="../../assets/fan-on.gif" alt="" width="90" height="90" srcset=""
+                            class="rounded-circle">
                     </span>
-                    <span (click)="switchFan()" *ngIf="!fan" class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
-                        <img src="../../assets/fan_down.jpeg" alt="" width="90" height="90" srcset="" class="rounded-circle bg-light">  
+                    <span (click)="switchFan()" *ngIf="!fan" style="background-color: #D1F4F0;"
+                        class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
+                        <img src="../../assets/fan_down.jpeg" alt="" width="90" height="90" srcset=""
+                            class="rounded-circle bg-light">
                     </span>
-                    <a href="#" class="m-auto tetx text-primary d-flex justify-content-center" (click)="switchFan()" >
+                    <a href="#" class="m-auto  text text-success d-flex justify-content-center" (click)="switchFan()">
                         <span class="material-symbols-outlined" *ngIf="fan" style="color:green">toggle_on</span>
                         <span class="material-symbols-outlined " *ngIf="!fan" style="color:red">toggle_off</span>
                     </a>
+
                 </div>
-               
-                </div>
+
+
+
             </div>
-        </nav>
+
+
+        </div>
+
+    </nav>
 
     <!-- Sidebar -->
-  
+
     <!-- Navbar -->
-    
-        
-    
+
     <!-- Navbar -->
 </header>
-  <!--Main Navigation-->
-  <nav id="main-navbar " class="navbar navbar-expand-lg w-100 navbar-light bg-white  border border-danger">
+<!--Main Navigation-->
+<nav id="main-navbar " class="navbar mt-2 mb-4 nav d-flex justify-content-center shadow" >
     <!-- Container wrapper -->
-    <div class="container-sm border w-50 border-danger">
-      <!-- Toggle button -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-mdb-toggle="collapse"
-        data-mdb-target="#sidebarMenu"
-        aria-controls="sidebarMenu"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
+    <div class="container-sm p-2  w-100   d-flex justify-content-around" >
+        <!-- Toggle button -->
+        <!-- Brand -->
+        <a class="navbar-brand" href="#" (click)="switchInfo()"  data-toggle="tooltip" data-placement="top" title="Info serre">
+            <span class="material-symbols-outlined" style=" size: 40px;">info</span>
+        </a>
 
-      <!-- Brand -->
-      <a class="navbar-brand" href="#" (click)="switchInfo()">
-        <span class="material-symbols-outlined"  style=" size: 40px;">info</span>
-      </a>
+        <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="localisation">
+            <span class="material-symbols-outlined" style=" size: 40px;">location_on</span>
+        </a>
 
-      <a class="navbar-brand" href="#">
-        <span class="material-symbols-outlined"  style=" size: 40px;">engineering</span>
-      </a>
+        <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="Info serre">
+            <span class="material-symbols-outlined" style=" size: 40px;">sync_lock</span>
+        </a>
 
-      <a class="navbar-brand" href="#">
-        <span class="material-symbols-outlined"  style=" size: 40px;">sync_lock</span>
-      </a>
+        
+        <a class="navbar-brand " href="#" style="display: block; margin-top: -30px;" data-toggle="tooltip" data-placement="top" title="Deconnexion">
+            <span class="fs-6">{{currentDate}}</span>
+            <div>
+                <span class="material-symbols-outlined" style=" size: 40px;">logout</span>
+            </div>
+        </a>
+        <!-- Search form -->
+        <!-- Right links -->
 
-      <a class="navbar-brand" href="#">
-        <span class="material-symbols-outlined"  style=" size: 40px;">logout</span>
-      </a>
-      <!-- Search form -->
-      <form class="d-none d-md-flex input-group w-auto my-auto">
-        <input
-          autocomplete="off"
-          type="search"
-          class="form-control rounded"
-          placeholder='Search (ctrl + "/" to focus)'
-          style="min-width: 225px;"
-        />
-        <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-      </form>
-
-      <!-- Right links -->
-      <ul class="navbar-nav ms-auto d-flex flex-row">
-        <!-- Notification dropdown -->
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fas fa-bell"></i>
-            <span class="badge rounded-pill badge-notification bg-danger">1</span>
-          </a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
-            <li>
-              <a class="dropdown-item" href="#">Some news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Another news</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </li>
-          </ul>
-        </li>
-
-        <!-- Icon -->
-        <li class="nav-item">
-          <a class="nav-link me-3 me-lg-0" href="#">
-            <i class="fas fa-fill-drip"></i>
-          </a>
-        </li>
-        <!-- Icon -->
-        <li class="nav-item me-3 me-lg-0">
-          <a class="nav-link" href="#">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-
-        <!-- Icon dropdown -->
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="flag-united-kingdom flag m-0"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li>
-              <a class="dropdown-item" href="#"
-                ><i class="flag-united-kingdom flag"></i>English
-                <i class="fa fa-check text-success ms-2"></i
-              ></a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-poland flag"></i>Polski</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-china flag"></i>中文</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-japan flag"></i>日本語</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-germany flag"></i>Deutsch</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-france flag"></i>Français</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-spain flag"></i>Español</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-russia flag"></i>Русский</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#"><i class="flag-portugal flag"></i>Português</a>
-            </li>
-          </ul>
-        </li>
-
-        <!-- Avatar -->
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-            href="#"
-            id="navbarDropdownMenuLink"
-            role="button"
-            data-mdb-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
-              class="rounded-circle"
-              height="22"
-              alt="Avatar"
-              loading="lazy"
-            />
-          </a>
-          <ul
-            class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="navbarDropdownMenuLink"
-          >
-            <li>
-              <a class="dropdown-item" href="#">My profile</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Settings</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Logout</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
     </div>
     <!-- Container wrapper -->
-  </nav>
-  <!--Main layout-->
-  <main style="margin-top: 58px;">
-    <div class="container pt-4">
-        <app-dashbord *ngIf="showDashboard"></app-dashbord>
-        <!-- <app-infos-serre></app-infos-serre> -->
+</nav>
+<!--Main layout-->
+<main>
+    <div class="container">
+        <app-dashbord></app-dashbord>
     </div>
-  </main>
-  <!--Main layout-->
+</main>
+<!--Main layout-->

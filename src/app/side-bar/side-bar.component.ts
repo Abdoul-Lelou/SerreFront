@@ -11,8 +11,10 @@ export class SideBarComponent implements OnInit{
   fan:boolean = false;
   showDashboard:boolean = true;
   showInfo:boolean = false;
+  currentDate:any;
   
   ngOnInit(): void {
+    this.showTime();
     throw new Error('Method not implemented.');
   }
 
@@ -30,5 +32,14 @@ export class SideBarComponent implements OnInit{
     }else{
       this.showDashboard = false;
     }
+  }
+
+  showTime(){
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+
+    this.currentDate= mm + '/' + dd + '/' + yyyy;
   }
 }
