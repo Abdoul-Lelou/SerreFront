@@ -65,7 +65,7 @@
 
 
       <!-- Brand -->
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="#" (click)="switchInfo()">
         <span class="material-symbols-outlined"  style=" size: 40px;">info</span>
       </a>
 
@@ -91,7 +91,8 @@
   <!--Main layout-->
   <main style="margin-top: 58px;">
     <div class="container pt-4">
-        <app-dashbord></app-dashbord>
+        <app-dashbord *ngIf="showDashboard"></app-dashbord>
+        <!-- <app-infos-serre></app-infos-serre> -->
     </div>
   </main>
   <!--Main layout-->
