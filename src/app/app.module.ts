@@ -10,6 +10,8 @@ import { DashbordComponent } from './dashbord/dashbord.component';
 import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -26,6 +28,9 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
