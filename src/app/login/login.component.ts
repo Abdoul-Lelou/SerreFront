@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ export class LoginComponent  implements OnInit{
   errorSms:any;
   img: boolean = false;
 
-  constructor(private formBuilder:FormBuilder) {}
+  constructor(private formBuilder:FormBuilder, userService: UserService) {}
 
   ngOnInit(){
 
@@ -34,6 +35,22 @@ export class LoginComponent  implements OnInit{
       this.spin = false
       return ;
     }
+
+    const user ={
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password
+    }
+
+    return this.userService.getConnexion(user).subscribe(
+      data =>{
+
+      },
+      error =>{
+
+      },
+      complete =>{}
+    );
+    
   }
 
   affich(){
