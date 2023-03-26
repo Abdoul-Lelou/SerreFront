@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +15,7 @@ export class LoginComponent  implements OnInit{
   errorSms:any;
   img: boolean = false;
 
-  constructor(private formBuilder:FormBuilder, userService: UserService) {}
+  constructor(private formBuilder:FormBuilder, private authService: UserService) {}
 
   ngOnInit(){
 
@@ -41,15 +41,17 @@ export class LoginComponent  implements OnInit{
       password: this.registerForm.value.password
     }
 
-    return this.userService.getConnexion(user).subscribe(
-      data =>{
-
+    return this.authService.getConnexion(user).subscribe(
+      data=>{
+          console.log(data);
+          
       },
       error =>{
-
-      },
-      complete =>{}
-    );
+        console.log(error);
+        
+      }
+    )
+    
     
   }
 

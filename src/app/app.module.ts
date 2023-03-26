@@ -3,26 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { LoginComponent } from './login/login.component';
-import { DashbordComponent } from './dashbord/dashbord.component';
-import { TableauComponent } from './components/tableau/tableau.component';
+// import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { SideBarComponent } from './pages/side-bar/side-bar.component';
+import { LoginComponent } from './pages/login/login.component';
+import { DashbordComponent } from './pages/dashbord/dashbord.component';
+// import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent,
-    SideBarComponent,
-    LoginComponent,
     DashbordComponent,
-    TableauComponent,
+    SideBarComponent,
+    LoginComponent
+    // NavBarComponent,
+    // SideBarComponent,
+    // LoginComponent,
+    // DashbordComponent,
+    // TableauComponent,
     
   ],
   imports: [
@@ -41,7 +45,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
       
-    })
+    }),
+    HttpClientModule
      
   ],
   providers: [],

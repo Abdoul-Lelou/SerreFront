@@ -1,7 +1,6 @@
 <!--Main Navigation-->
 <header class="z-3 position-absolute p-2 rounded-3" >
     <!-- Sidebar -->
-
     <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse" style="background-color: #4b4022; ">
         <div class="position-sticky  h-100" >
             <div class="list-group list-group-flush mx-3 mt-2 p-4"
@@ -54,7 +53,6 @@
 
 
         </div>
-
     </nav>
 
     <!-- Sidebar -->
@@ -64,39 +62,48 @@
     <!-- Navbar -->
 </header>
 <!--Main Navigation-->
-<nav id="main-navbar " class="navbar mt-2 mb-4 nav d-flex justify-content-center shadow" >
-    <!-- Container wrapper -->
-    <div class="container-sm p-2  w-100   d-flex justify-content-around" >
-        <!-- Toggle button -->
-        <!-- Brand -->
-        <a class="navbar-brand" href="#" (click)="switchInfo()"  data-toggle="tooltip" data-placement="top" title="Info serre">
-            <span class="material-symbols-outlined" style=" size: 40px;">info</span>
-        </a>
 
-        <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="localisation">
-            <span class="material-symbols-outlined" style=" size: 40px;">location_on</span>
-        </a>
 
-        <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="Info serre">
-            <span class="material-symbols-outlined" style=" size: 40px;">sync_lock</span>
-        </a>
 
-        
-        <a class="navbar-brand " href="#" style="display: block; margin-top: -30px;" data-toggle="tooltip" data-placement="top" title="Deconnexion">
-            <span class="fs-6">{{currentDate}}</span>
-            <div>
-                <span class="material-symbols-outlined" style=" size: 40px;">logout</span>
-            </div>
-        </a>
-        <!-- Search form -->
-        <!-- Right links -->
 
-    </div>
-    <!-- Container wrapper -->
-</nav>
 <!--Main layout-->
-<main>
-    <div class="container">
+&nbsp;
+<main class="shadow bg-light pb-1 pt-0  " style=" border-radius: 0 20px 20px 0;">
+    <nav  class="navbar  mb-4 d-flex justify-content-center " >
+        <!-- Container wrapper -->
+        <div class="container p-2  w-100 nav shadow  d-flex justify-content-around border mb-4" >
+            <!-- Toggle button -->
+            <!-- Brand -->
+            <a class="navbar-brand" href="#" routerLink="info" data-toggle="tooltip" data-placement="top" title="Info serre">
+                <span class="material-symbols-outlined" style=" size: 40px;">info</span>
+            </a>
+    
+            <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="localisation">
+                <span class="material-symbols-outlined" style=" size: 40px;">location_on</span>
+            </a>
+    
+            <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="Mot de passe">
+                <span class="material-symbols-outlined" style=" size: 40px;">sync_lock</span>
+            </a>
+    
+            <a class="navbar-brand" href="#" data-toggle="tooltip" routerLink="login" data-placement="top" title="Deconnexion">
+                <span class="material-symbols-outlined" style=" size: 40px;">logout</span>
+            </a>
+    
+            
+            <!-- <a class="navbar-brand " href="#" style="display: block; margin-top: -30px;" data-toggle="tooltip" data-placement="top" title="Deconnexion"> -->
+                <!-- <span class="fs-6">{{currentDate}}</span> -->
+                <!-- <div> -->
+                    <!-- <span class="material-symbols-outlined" style=" size: 40px;">logout</span> -->
+                <!-- </div> -->
+            <!-- </a> -->
+            <!-- Search form -->
+            <!-- Right links -->
+    
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <div class="container mb-4">
         <app-dashbord></app-dashbord>
     </div>
 </main>

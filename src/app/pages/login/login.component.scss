@@ -6,6 +6,7 @@
 .wrapper{
     background: #ececec;
     padding: 0 20px 0 20px;
+    margin: 0 auto;
 }
 .main{
     display: flex;
@@ -21,7 +22,7 @@
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
 }
 .side-image{
-    background-image: url("../../assets/2.jpg");
+    background-image: url("../../../assets/2.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -111,7 +112,7 @@ i{
 }
 
 .im3{
-  background-image: url("../../assets/3.gif");
+  background-image: url("../../../assets/3.gif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

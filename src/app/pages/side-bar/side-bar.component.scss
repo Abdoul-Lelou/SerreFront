@@ -7,6 +7,8 @@
 
     }
   }
+
+  
   
   /* Sidebar */
   .sidebar {
@@ -18,13 +20,13 @@
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
     width: 240px;
     z-index: 1000;
-    background-color: #D1F4F0;;
+    // background-color: #D1F4F0;;
   }
   
   @media (max-width: 991.98px) {
     .sidebar {
       width: 100%;
-      background-color: #D1F4F0;;
+      // background-color: #D1F4F0;;
     }
   }
   .sidebar .active {
@@ -43,18 +45,18 @@
   }
 
   header{
-    background-color: #D1F4F0;;
+    // background-color: #D1F4F0;;
   }
 
   .nav{
-    margin: 0 22%;
-    min-width: 75%;
-    background-color: #D1F4F0;
+    max-width: 70%;
+    border-radius: 20px;
+    // background-color: #D1F4F0;
   }
 
   .container{
-    margin: 0 3.5%;
-    // border: 1px solid black; 
-    width: 93.5%;
+      margin: 0 3.5%;
+      // border: 1px solid black; 
+      width: 93.5%;
   }
   
