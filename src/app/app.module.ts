@@ -23,12 +23,18 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     SideBarComponent,
     LoginComponent,
     DashbordComponent,
-    TableauComponent
+    TableauComponent,
+    TableauhistoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgxPaginationModule,
+  Ng2SearchPipeModule,
+  NgCircleProgressModule 
+
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

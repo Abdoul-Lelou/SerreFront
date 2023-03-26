@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { TableauhistoComponent } from './tableauhisto/tableauhisto.component';
 
 const routes: Routes = [
+/*  
+  {path: 'temp_hum',component:TableauhistoComponent} */
  
-  {path: 'temp_hum',component:TableauhistoComponent}, 
-  {path: 'tens-hum',component:TableauhistoComponent}, 
  
 ];
 

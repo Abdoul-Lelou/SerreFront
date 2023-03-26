@@ -25,7 +25,7 @@ export class TableauhistoComponent implements OnInit{
    histo: any[] = tableau ;
 showFormPass =false;
 searchText!: string;
-itemsperpage: number=3;
+itemsperpage: number=4;
 p: number=1;
 
 
