@@ -49,6 +49,9 @@ import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
+      // units:"%",
+      
+
       
     }),
     HttpClientModule,

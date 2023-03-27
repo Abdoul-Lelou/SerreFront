@@ -6,9 +6,10 @@ import { Component,  OnInit} from '@angular/core';
   styleUrls: ['./dashbord.component.scss']
 })
 export class DashbordComponent implements OnInit {
+// [x: string]: string;
 
   ngOnInit() {}
-  isOn = false;
+  isOn= false;
 
   aroz:boolean = false;
   toi:boolean = false;
