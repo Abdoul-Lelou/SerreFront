@@ -8,11 +8,12 @@ import { SideBarComponent } from './pages/side-bar/side-bar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashbordComponent } from './pages/dashbord/dashbord.component';
 // import { TableauComponent } from './components/tableau/tableau.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ReglageComponent } from './pages/reglage/reglage.component';
 
 
 
@@ -21,7 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppComponent,
     DashbordComponent,
     SideBarComponent,
-    LoginComponent
+    LoginComponent,
+    ReglageComponent,
     // NavBarComponent,
     // SideBarComponent,
     // LoginComponent,
@@ -46,7 +48,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       animationDuration: 300,
       
     }),
-    HttpClientModule
+    HttpClientModule,
+    NgbDatepickerModule
      
   ],
   providers: [],
