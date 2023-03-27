@@ -7,7 +7,7 @@
           <!-- section Temperature -->
 
             <div class="d-flex flex-column"  id="sectTemp">
-                <p class="thhe">Température enceinte</p>
+                <p class="thhe">Température Serre</p>
                 <div class="d-flex flex-row" id="contCircularTempetIconTemp">
                   <!-- Je mets ici ce qui déclenche le popup info serre -->
                   <img [src]="image3Histo" alt="" class="iconeTemp" (click)="openPopupInfo()">
@@ -44,7 +44,7 @@
             </div>
           <!-- section Humidité sol -->
             <div class="d-flex flex-column"  id="sectHumSol">
-                <p class="thhe">Humidité du sol </p>
+                <p class="thhe">Humidité sol </p>
                 <div class="d-flex flex-row" id="contCircularTempetIconTemp">
                   <img [src]="image2Histo" alt="" class="iconHumEns">
                   <!-- <p class="cirTemp">circularProgressBar</p> -->
@@ -63,7 +63,7 @@
             </div>
           <!-- section Luminosité -->
             <div class="d-flex flex-column"  id="sectLum">
-                <p class="thhe">Luminosité dans la serre</p>
+                <p class="thhe">Luminosité serre</p>
                 <div class="d-flex flex-row" id="contCircularTempetIconTemp">
                   <img [src]="image1Histo" alt="" class="iconHumEns">
                   <!-- <p class="valLuminosité">{{ObjetJSON.val4}}</p> -->
@@ -88,7 +88,7 @@
   <div class="d-flex flex-row" id="Blocbasse">
     <!-- Colone gauche (historique) -->
       <div class="d-flex flex-column" id="clonGauche">
-          <p class="thhe">Historique des données</p>
+          <p class="thhe">Historique données</p>
           <div class="d-flex flex-column" id="ll">
             <div class="sec1" id="noir1">
                 <img [src]="image1Histo" alt="" class="iconHumEns">
@@ -126,7 +126,7 @@
             <!-- Alerte sonor -->
             <div class="d-lex flex-column" id="deuxColon">
               <span *ngIf="!cris">
-                <p class="laa">Alerte sonore</p>
+                <p class="laa">Alerte</p>
                 <img [src]="Alarm" alt="" id="buzzer">
               </span>
               <span *ngIf="cris">
@@ -169,9 +169,15 @@
              </div>
            </div>
            <div class="d-lex flex-column" id="deuxColonD">
-             <p class="laa">Toiture fermée</p>
-             <img [src]="ToiFerm" alt="" id="buzzer">
-
+             <span *ngIf="!toi">
+               <p class="laa">Toiture fermée</p>
+               <img [src]="ToiFerm" alt="" id="buzzer">
+            </span>
+            <span *ngIf="toi" style="display: flex;flex-direction: column;">
+              <p class="laa">Ouverture</p>
+              <img [src]="ToiFerm" alt="" id="buzzer" style="margin-left: 54px;margin-top: -12px;">
+              <img [src]="verin" alt="" id="verin">
+           </span>
            </div>
            
         </div>
@@ -204,7 +210,7 @@
   </div>
 </div>
 </div> -->
-<!--  -->
+<!-- LE POPUP POUR CODE DE DEVEROUILLAGE PORTE -->
 
 
 
@@ -247,7 +253,7 @@
 <!-- FIN POPUP INFORMATIONS DE LA SERRE -->
 <!-- POPUP Affichage données  ARROSAGE -->
 
-<div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
+<!-- <div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
 <div class="modal-dialog" role="document" style="background-color: #FFFFFF; height: 90%;width: 800px;opacity: 1;padding: 0px;">
   <div class="modal-content" style="background-color: white;height: 100%; width: 100%;padding: 0px;">
     <div class="modal-header" style="background-color: #FFFFFF;height: 26px;padding-left: 94%;">
@@ -284,7 +290,7 @@
    
   </div>
 </div>
-</div>
+</div> -->
 
 <!-- FIN POPUP Affichage données ARROSAGE  ET DEBUT POPUP PARAMETRAGE ARROSAGE-->
 
@@ -351,6 +357,26 @@
 
 
 
+<!-- popup pour modif mot de passe -->
+
+<div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 240px; background-color: black;opacity: 0.9;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
+<div class="modal-dialog" role="document" style="background-color: black; height: 90%;width: 100%;padding: 30px;opacity: 1;">
+  <div class="modal-content" >
+    <div class="modal-header">
+      <button type="button" class="close" aria-label="Close" (click)="closePopup()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body" style="background-color: white; opacity: 1;">
+      
+
+
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
 
 
 

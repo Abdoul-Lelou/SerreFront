@@ -11,7 +11,8 @@ export class DashbordComponent implements OnInit {
   isOn = false;
 
   aroz:boolean = false;
-  cris:boolean = false;
+  toi:boolean = false;
+  cris:boolean = true;
   prt:boolean = false;
   lamp:boolean = false;
   cheminImage:any = "https://media.discordapp.net/attachments/1033044458092118168/1087419548929634408/vvv.png?width=498&height=374";
@@ -29,10 +30,11 @@ export class DashbordComponent implements OnInit {
   ArrosoirGif:any="https://media.discordapp.net/attachments/1033044458092118168/1089451339240702043/icons8-watering-can-66.png?width=72&height=72";
   portFerm:any="https://uxwing.com/wp-content/themes/uxwing/download/household-and-furniture/door-close-icon.svg";
   portOuv:any="https://uxwing.com/wp-content/themes/uxwing/download/household-and-furniture/open-door-icon.svg";
-  ToiFerm:any="https://media.discordapp.net/attachments/1049357662065799198/1088258291513180221/motReposRouge.png?width=55&height=55";
+  ToiFerm:any="https://media.discordapp.net/attachments/1072087018206675037/1089886716510347384/icons8-roofing-32_1.png?width=35&height=35";
   ToiOuv:any="";
   lampSerAlum:any="https://media.discordapp.net/attachments/1033044458092118168/1089460554214678528/icons8-spotlights-68.png?width=74&height=74";
   
+  verin:any="https://media.discordapp.net/attachments/1072087018206675037/1089891409206726786/verinGIF-unscreen.gif?width=392&height=173";
 
   imArros:any="https://media.discordapp.net/attachments/1033044458092118168/1087432078246813706/icons8-water-plants-66.png?width=72&height=72";
 
@@ -65,6 +67,7 @@ export class DashbordComponent implements OnInit {
   }
 
   displayStyle = "none";
+  
  
 
 openPopup() {
@@ -89,6 +92,8 @@ closePopupInfo() {
   this.displayStyle2 = "none";
   
 }
+
+ 
 
 }
 
