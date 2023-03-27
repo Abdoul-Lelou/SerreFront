@@ -45,7 +45,7 @@
       <tr *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
         <div class=" pt-10">
           <div class="pagination fixed-bottom justify-content-center">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls> 
           </div>
         </div>
     </div>
