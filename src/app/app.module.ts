@@ -12,8 +12,9 @@ import { NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReglageComponent } from './pages/reglage/reglage.component';
+import { JtwInterceptor } from './helpers/interceptor.service';
 
 
 
@@ -52,7 +53,9 @@ import { ReglageComponent } from './pages/reglage/reglage.component';
     NgbDatepickerModule
      
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JtwInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
