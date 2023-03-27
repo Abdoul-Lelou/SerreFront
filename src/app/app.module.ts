@@ -16,6 +16,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { ReglageComponent } from './pages/reglage/reglage.component';
 import { JtwInterceptor } from './helpers/interceptor.service';
 import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
+import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
 
 
 
@@ -26,7 +27,8 @@ import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
     SideBarComponent,
     LoginComponent,
     ReglageComponent,
-    InfosSerreComponent
+    InfosSerreComponent,
+    ModifPasswordComponent
     // NavBarComponent,
     // SideBarComponent,
     // LoginComponent,
