@@ -14,6 +14,8 @@ export class SideBarComponent implements OnInit{
   showHome:boolean = false
   showDashboard:boolean = true;
   showInfo:boolean = false;
+  infoArrosage: boolean = true;
+  titleArrosage: boolean = true;
   currentDate:any;
   imgArros:any="https://media.discordapp.net/attachments/1033044458092118168/1087432078246813706/icons8-water-plants-66.png?width=72&height=72";
   
@@ -42,6 +44,17 @@ export class SideBarComponent implements OnInit{
     }
   }
 
+  switchArrosage () {
+   
+    if (this.infoArrosage == true){
+      this.infoArrosage = false;
+       this.titleArrosage = false;
+    }else{
+      this.infoArrosage = true;
+      this.titleArrosage = true;
+    }
+  }
+
   showTime(){
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
@@ -57,9 +70,7 @@ export class SideBarComponent implements OnInit{
  
 
 openPopup() {
-	
   this.displayStyle = "block";
-  
 }
 
 closePopup() {
@@ -68,13 +79,13 @@ closePopup() {
 }
 
 openSerre() {
-	
   this.displaySerre = "block";
-  
 }
 
 closeSerre() {
-  this.displaySerre = "none";
-  
+  this.displaySerre = "none"; 
 }
+
+
+
 }

@@ -1,17 +1,17 @@
 <!--Main Navigation-->
 <header class="z-3 position-absolute p-2 rounded-3">
     <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse" style="background-color: #000000; ">
-        <div class="position-sticky  h-100">
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar shadow bg-light collapse" style="background-color: #D1F4F0; ">
+        <div class="position-sticky shadow h-100">
             <div class="list-group list-group-flush mx-3 mt-2 p-4"
                 style="background-color: #D1F4F0; border-radius: 10px 0px 0 0">
                 <img src="../../assets/logo.jpeg" alt="" width="130" height="130" srcset=""
                     class="rounded-circle m-auto mb-2" routerLink="home">
 
-                <span href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
-                    style="background-color: #D1F4F0;" (click)="openPopup()">
+                <a href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
+                    style="background-color: #D1F4F0;"  data-bs-toggle="modal" href="#exampleModal" role="button" data-toggle="tooltip" data-placement="top">
                     <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
-                </span>
+                </a>
                 <span (click)="switchToit()"
                     class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
                     style="background-color: #D1F4F0;">
@@ -74,8 +74,7 @@
         <div class="container p-2  w-100 nav shadow  d-flex justify-content-around border mb-4">
             <!-- Toggle button -->
             <!-- Brand -->
-            <a class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalToggle" role="button" data-toggle="tooltip" data-placement="top"
-                title="Info serre">
+            <a class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalToggle" role="button" data-toggle="tooltip" data-placement="top" title="Info serre">
                 <span class="material-symbols-outlined" style=" size: 40px;">info</span>
             </a>
 
@@ -164,8 +163,140 @@
 
 
 
+    <div class="modal  fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModal"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModal">Information Arrosage</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body"
+            style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px 10px;display: flex;flex-direction: column;gap: 8px;padding-bottom: 16px;">
+            <div
+                style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
+                <img [src]="imgArros" alt="" style="width: 70%; height: 100%;">
+            </div>
+            <p *ngIf="titleArrosage" style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Reglage d'arrosage</p>
+            <p *ngIf="!titleArrosage" style="text-align: center;color: #000000;font-weight: bold;margin-bottom: -3px;">Définir vos heures et durées d’arrosage</p>
+            <div *ngIf="infoArrosage" class="d-flex justify-content"
+                style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
+                <div class="d-flex justify-content" style="gap: 100px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
+                </div>
+                <div class="d-flex justify-content" style="gap: 140px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">06h00</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">70s</p>
+                </div>
+                <div class="d-flex justify-content" style="gap: 140px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">19h00</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
+                </div>
+                <button (click)="switchArrosage()"
+                    style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
+            </div>
+            
+            <div *ngIf="!infoArrosage" class="d-none justify-content"
+                style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #1c1f1e;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
+                <div class="d-flex justify-content" style="gap: 100px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
+                </div>
+                <div class="d-flex justify-content" style="gap: 140px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">06h 00</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">70s</p>
+                </div>
+                <div class="d-flex justify-content" style="gap: 140px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">19h 00</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
+                </div>
+                <button
+                    style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
+            </div>
 
+            <div  *ngIf="!infoArrosage" class="d-flex justify-content"
+            style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
+           
+            <div class="d-flex justify-content" style="gap: 170px;margin-bottom: -3px;">
+                <p style="color: #000000;font-weight: bold; text-align: center;">Premier arrosage</p>
+                <p style="color: #000000;font-weight: bold; text-align: center; ">Second arrosage</p>
 
+            </div>
+            <div class="d-flex justify-content-between border  bg-light shadow" style="width: 90%; margin: 0 auto;">
+
+                <div class="input-group " style="width: 90px;">
+                    <!-- <div>
+                        <label style="height: 20px;" class="input-group-text"
+                            for="inputGroupSelect01">Heure1</label>
+                    </div> -->
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="inputGroupSelect01">
+                        <option selected>6h00</option>
+                        <option value="1">7h00</option>
+                        <option value="2">08h00</option>
+                    </select>
+                </div>
+
+                <div class="input-group " style="width: 90px;">
+                    <!-- <div class="input-group-prepend">
+                        <label style="height: 20px;" class="input-group-text"
+                            for="inputGroupSelect01">Heure2</label>
+                    </div> -->
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="inputGroupSelect01">
+                        <option selected>17h 00</option>
+                        <option value="1">18h 00</option>
+                        <option value="2">19h 00</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-center" style="gap: 270px;margin-bottom: -3px;">
+                <p style="color: #000000;font-weight: bold; text-align: center;">Durée1</p>
+                <p style="color: #000000;font-weight: bold; text-align: center; ">Durée2</p>
+
+            </div>
+
+            <div class="d-flex justify-content-between border  bg-light shadow" style="width: 90%; margin: 0 auto;">
+
+                <div class="input-group " style="width: 90px;">
+                    <!-- <div>
+                        <label style="height: 20px;" class="input-group-text"
+                            for="inputGroupSelect01">Heure1</label>
+                    </div> -->
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="inputGroupSelect01">
+                        <option selected>25s</option>
+                        <option value="1">45s</option>
+                        <option value="2">60s</option>
+                    </select>
+                </div>
+
+                <div class="input-group " style="width: 90px;">
+                    <!-- <div class="input-group-prepend">
+                        <label style="height: 20px;" class="input-group-text"
+                            for="inputGroupSelect01">Heure2</label>
+                    </div> -->
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" id="inputGroupSelect01">
+                        <option selected>25s</option>
+                        <option value="1">45s</option>
+                        <option value="2">60s</option>
+                    </select>
+                </div>
+
+            </div>
+            <button (click)="switchArrosage()"
+                style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Appliquer</button>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    </div>
 
 
 
