@@ -13,6 +13,7 @@ export class SideBarComponent implements OnInit{
   showDashboard:boolean = true;
   showInfo:boolean = false;
   currentDate:any;
+  imgArros:any="https://media.discordapp.net/attachments/1033044458092118168/1087432078246813706/icons8-water-plants-66.png?width=72&height=72";
   
   ngOnInit(): void {
     this.showTime();
@@ -43,4 +44,19 @@ export class SideBarComponent implements OnInit{
 
     this.currentDate= mm + '/' + dd + '/' + yyyy;
   }
+
+
+  displayStyle = "none";
+ 
+
+openPopup() {
+	
+  this.displayStyle = "block";
+
+  
+}
+closePopup() {
+  this.displayStyle = "none";
+  
+}
 }

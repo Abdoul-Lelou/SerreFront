@@ -9,7 +9,7 @@
                     class="rounded-circle m-auto mb-2">
 
                 <span href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
-                    style="background-color: #D1F4F0;">
+                    style="background-color: #D1F4F0;" (click)="openPopup()">
                     <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
                 </span>
                 <span (click)="switchToit()"
@@ -74,19 +74,19 @@
         <div class="container p-2  w-100 nav shadow  d-flex justify-content-around border mb-4" >
             <!-- Toggle button -->
             <!-- Brand -->
-            <a class="navbar-brand" href="#" routerLink="info" data-toggle="tooltip" data-placement="top" title="Info serre">
+            <a class="navbar-brand text text-danger" href="#" routerLink="info" data-toggle="tooltip" data-placement="top" title="Info serre">
                 <span class="material-symbols-outlined" style=" size: 40px;">info</span>
             </a>
     
-            <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="localisation">
+            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top" title="localisation">
                 <span class="material-symbols-outlined" style=" size: 40px;">location_on</span>
             </a>
     
-            <a class="navbar-brand" href="#" data-toggle="tooltip" data-placement="top" title="Mot de passe">
+            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top" title="Mot de passe">
                 <span class="material-symbols-outlined" style=" size: 40px;">sync_lock</span>
             </a>
     
-            <a class="navbar-brand" href="#" data-toggle="tooltip" routerLink="login" data-placement="top" title="Deconnexion">
+            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" routerLink="login" data-placement="top" title="Deconnexion">
                 <span class="material-symbols-outlined" style=" size: 40px;">logout</span>
             </a>
     
@@ -106,5 +106,47 @@
     <div class="container mb-4">
         <app-dashbord></app-dashbord>
     </div>
+
+
+    <div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document" style="background-color: #FFFFFF; height: 90%;width: 800px;opacity: 1;padding: 0px;">
+          <div class="modal-content" style="background-color: white;height: 100%; width: 100%;padding: 0px;">
+            <div class="modal-header" style="background-color: #FFFFFF;height: 26px;padding-left: 94%;">
+              <button style="height: 25px;" type="button" class="close" aria-label="Close" (click)="closePopup()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+           
+            <div class="modal-body" style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px 10px;display: flex;flex-direction: column;gap: 8px;padding-bottom: 16px;">
+               <div style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
+                  <img [src]="imgArros" alt="" style="width: 70%; height: 100%;">
+               </div>
+               <p style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Informations d’arrosage</p>
+               <div class="d-flex justify-content" style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
+                  <div class="d-flex justify-content" style="gap: 100px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
+                  </div>
+                  <div class="d-flex justify-content" style="gap: 140px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">06h 00</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">70s</p>
+                  </div>
+                  <div class="d-flex justify-content" style="gap: 140px;">
+                    <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">19h 00</p>
+                    <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
+                  </div>
+                  <button style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
+               </div>
+               
+            </div>
+           
+          </div>
+        </div>
+    </div>
+
+
 </main>
 <!--Main layout-->

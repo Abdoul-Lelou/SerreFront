@@ -23,7 +23,7 @@ export class LoginComponent  implements OnInit{
 
     this.registerForm = this.formBuilder.group({
       email:['', [Validators.required, Validators.email]],
-      password:['', [Validators.required, Validators.minLength(6)]]
+      password :['', [Validators.required, Validators.minLength(6)]]
   })
   }
 
@@ -40,11 +40,11 @@ export class LoginComponent  implements OnInit{
       email: this.registerForm.value.email,
       password: this.registerForm.value.password
     }
-
+    console.log(user);
+    
     return this.authService.getConnexion(user).subscribe(
       data=>{
           console.log(data);
-          
       },
       error =>{
         console.log(error);
