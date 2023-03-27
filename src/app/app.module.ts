@@ -16,6 +16,10 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { ReglageComponent } from './pages/reglage/reglage.component';
 import { JtwInterceptor } from './helpers/interceptor.service';
 import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
+import { TableauComponent } from './pages/tableau/tableau.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
@@ -26,13 +30,14 @@ import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
     SideBarComponent,
     LoginComponent,
     ReglageComponent,
-    InfosSerreComponent
+    InfosSerreComponent,
+    TableauComponent
     // NavBarComponent,
     // SideBarComponent,
     // LoginComponent,
     // DashbordComponent,
     // TableauComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,8 @@ import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
+    NgxPaginationModule,
+    
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,
@@ -49,11 +56,13 @@ import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
       outerStrokeColor: "#78C000",
       innerStrokeColor: "#C7E596",
       animationDuration: 300,
-      
+
     }),
     HttpClientModule,
-    NgbDatepickerModule
-     
+    NgbDatepickerModule,
+    Ng2SearchPipeModule
+
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JtwInterceptor, multi: true }

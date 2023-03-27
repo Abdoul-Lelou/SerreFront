@@ -1,0 +1,137 @@
+<div *ngIf="!showFormPass" class="container shadow-none p-3 mb-5 bg-light rounded" id="haut">
+    <div class="header">
+  
+    </div>
+    <div class="titre">
+      Historique des températures et humidités de la Serre
+    </div>
+    <!-- /recherche/ -->
+    <div class="input-group">
+      <div class="form-outline">
+        <input type="date" id="form1" class="form-control" (change)="search($event)"
+          style="border: 2px solid ; height: 70%;" />
+        <label class="form-label" for="form1"></label>
+      </div>
+  
+    </div>
+    <div>
+      <!--  <div class="font"></div> -->
+      <div class="d-flex justify-content-center">
+        <table class="table table-bordered " style="border: 2px solid ;">
+  
+          <thead class="bag">
+  
+            <tr style="">
+              <th scope="col"><p> Date<img src="assets/calen.web" alt="" ></p> </th>
+              <!-- <th scope="col">Heure</th> -->
+              <th scope="col"><i class="bi bi-thermometer-half"></i><p> Temperature<img src="assets/tour.png" alt=""
+                  style="height: 30px;background: #000; "></p> </th>
+              <th scope="col"> <i class="bi bi-droplet-half"></i><p>Humidite <img src="assets/one.png" alt=""
+                  style="height: 30px;background: #000; "></p> </th>
+  
+            </tr>
+          </thead>
+          <tbody>
+          
+            <tr *ngFor="let i of histo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+              <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
+              <td><p>{{i.date}}</p></td>
+              <td><p>{{i.temperature}}</p></td>
+              <td><p>{{i.humidite}}</p></td>
+  
+            </tr>
+          </tbody>
+        </table>
+        <tr *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+          <div class=" pt-10">
+            <div class="pagination fixed-bottom justify-content-center">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="ff">
+  
+    </div>
+    <!-- bas -->
+    <button class="bas" routerLink="/tens-hum" (click)="onclick()">
+      <div class="image">
+        <img src="assets/sun.png" alt="" style="height: 80px;">
+        <img src="assets/humSol.png" alt="" style="height: 80px;">
+      </div>
+    </button>
+  </div>
+  
+  
+  
+  
+  <!-- /Historique de  l'ensoleillement et humidités de sol de la Serre/// -->
+  
+  
+  
+  <div *ngIf="showFormPass" class="container shadow-none p-3 mb-5 bg-light rounded" id="haut">
+    <div class="header">
+  
+    </div>
+    <div class="titre">
+      Historique de l'ensoleillement et humidités de sol de la Serre
+    </div>
+    <!-- /recherche/ -->
+    <div class="input-group">
+      <div class="form-outline">
+        <input type="date" id="form1" class="form-control" (change)="search($event)"
+          style="border: 2px solid ; height: 70%;" />
+        <label class="form-label" for="form1"></label>
+      </div>
+  
+    </div>
+    <div>
+      <!--  <div class="font"></div> -->
+      <div class="d-flex justify-content-center">
+        <table class="table table-bordered " style="border: 2px solid ;">
+  
+          <thead class="bag">
+  
+            <tr style=" align-items: center; justify-content: center; margin-left: -12px;">
+              <th scope="col"><p>Date</p></th>
+              <!-- <th scope="col">Heure</th> -->
+              <th scope="col"><i class="bi bi-thermometer-half"></i><p> Temperature <img src="assets/sun.png" alt=""
+                  style="height: 30px;background: #000;"></p></th>
+              <th scope="col"> <i class="bi bi-droplet-half"></i><p> Humidite <img src="assets/humSol.png" alt=""
+                  style="height: 30px; background: #000;"></p></th>
+  
+            </tr>
+          </thead>
+          <tbody>
+           
+            <tr
+              *ngFor="let ensoleillement of histoSol| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+              <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
+              <td><p>{{ensoleillement.date}}</p></td>
+              <td><p>{{ensoleillement.ensol}}</p></td>
+              <td><p>{{ensoleillement.humiditeSol}}</p></td>
+            </tr>
+          </tbody>
+        </table>
+        <tr *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+          <div class=" pt-10">
+            <div class="pagination fixed-bottom justify-content-center">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="ff">
+  
+    </div>
+    <!-- bas -->
+    <button class="bas" routerLink="/tens-hum" (click)="on()">
+      <div class="image">
+        <img src="assets/tour.png" alt="" style="height: 80px;">
+        <img src="assets/one.png" alt="" style="height: 80px;">
+      </div>
+    </button>
+  </div>
+  
+  
+  
