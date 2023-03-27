@@ -440,13 +440,14 @@
     padding: 10px 10px;
     border-radius: 7px 7px 7px 7px ;
     box-shadow: 1px 3px 2px #000000;
+    
 }
 
 // Bloc blanche haute
 #Blocbasse
 {
     width: 100%;
-    height: 97%;
+    height: 100%;
     // border: 1px solid black;
     padding: 5px 5px;
     gap: 13.4px;
@@ -572,7 +573,7 @@
     box-shadow: 1px 2px 2px #000000;
     width: 24.6%;
     height: 100%;
-    padding: 5px; gap: 0px;
+    padding: 3px; gap: 0px;
     // border-radius: 7px 7px 7px 7px ;
     
     
@@ -634,7 +635,7 @@
 #premColon
 {
     border-right: 0.02px solid black;
-    width: 32%;
+    width: 30%;
     height: 98%; 
     
 }
@@ -644,7 +645,7 @@
    border-right: 0.02px solid black;
     width: 30%;
     height: 98%;
-    padding-right: 0.3px;
+    // padding-right: 0.3px;
     
 
 }
@@ -652,7 +653,7 @@
 #TroixColon
 {
    
-    width: 34%;
+    width: 30%;
     height: 98%;
    
 
@@ -812,242 +813,28 @@
   .form-check1
   {
     width: 40px;
-    margin-left: 35.2px;
+    margin-left: 29px;
     margin-top: 36px;
   }
 
 .form-check
 {
   width: 40px;
-  margin-left: 38px;
+  margin-left: 32px;
   margin-top: 33px;
 }
 
 .form-check2
 {
   width: 40px;
-  margin-left: 66px;margin-top: 36px;
+  margin-left: 56px;margin-top: 36px;
 }
 
 
 
 
+#verin{
+    width: 80px;height: 30px;margin-left: 46px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// #lign1 // La premiere ligne
-// {
-//     // border: 1px solid black;
-//     height: 160px;
-//     background-color: #D1F4F0;
-//     // box-shadow: 1px 3px 1px black;
-// }
-
-// // Les 3 sections temperature, humidité et ensoleillement THE
-// .text1{
-//     height: 3%;
-//     background-color: blue;
-   
-// }
-
-// #contTHE
-// {
-//     // border: 1px solid black;
-//     height: 96%;
-//     background-color: #D1F4F0;
-//     gap: 1%;
-// }
-// #contTHE2
-// {
-//     // border: 1px solid black;
-//     height: 96%;
-//     background-color: #D1F4F0;
-//     gap: 1%;
-//     margin-top: 1.5%;
-// }
-// #THE 
-// {
-//     width: 33%;
-//     height: 98%;
-//     border-radius: 13px;
-//     gap: 10px;
-//     background-color: #FFFFFF;
-//     text-align: center;
-//     box-shadow: 1px 3px 2px #000000;
-// }
-
-// #THEHisto
-// {
-//     width: 55%;
-//     height: 98%;
-//     border-radius: 13px;
-//    padding-left: 5%;
-//     background-color: #FFFFFF;
-//     text-align: center;
-//     box-shadow: 1px 3px 2px #000000;
-//     gap: 1px;
-// }
-
-// #imChang{
-//     width: 44%;
-//     height: 98%;
-//      background-color: #FFFFFF;
-//     border: 1px solid black;
-//     border-radius: 13px 13px;
-// }
-
-// #fa1{
-//     font-size: 4em;
-//     color: red;
-// }
-// #fa2
-// {
-//     font-size: 4em;
-//     color: #4acdbd;width: 20px;
-// }
-
-// .iconeHumEnc{width: 35px; height: 40px;margin-top: 7px;}
-// .iconeEns{width: 35px; height: 40px;margin-top: 7px;}
-// .iconeTemp{width: 35px; height: 40px;margin-top: 7px; margin-right: 5px; }
-// #imhumSol{width: 55px; height: 50px;margin-top: 7px;}
-
-// //les images au iveau des historiques
-// #imHisto1{width: 35px; height: 40px;}
-// #imHisto2{width: 55px; height: 50px;margin-top: -7px;}
-// #imHisto3{width: 35px; height: 40px;}
-// #imHisto4{width: 35px; height: 40px;}
-// //image geolocalisation
-// .imge{width: 30%;height: 50%; }
-
-// #lign2
-// {
-//     // border: 1px solid black;
-//     height: 160px;
-//     background-color: #D1F4F0;
-// }
-
-// #GEOLOC
-// {
-//     width: 66%;
-//     height: 98%;
-//     border-radius: 13px;
-//     gap: 10px;
-//     // background-color: #FFFFFF;
-//     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyVOU1xTozbe-QnoPmgRXU-TXE5hhE2ZyD4w&usqp=CAU);
-//     text-align: center;
-//     opacity: 0.7;
-    
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-// .histoText
-// {
-//     // border: 1px solid black;text-align: left;
-//     font-weight: bold;
-//     size: 16px;
-// }
-
-// .contsec
-// {
-//     display: flex;
-//     flex-direction: row;
-//     gap: 4%;
-//     justify-content: center;
-//     // border: 1px solid black;
-//     height: 70%;width: 100%; margin-top: -8px;
-// }
-
-// .sec1
-// {
-//     // border: 1px solid black;
-//     width: 43%;height: 100%;
-//     background-color: #000000;
-//     border-radius: 9% 9% 9% 9%; display: flex; flex-direction: row;
-//     justify-content: center;padding-top: 28px; gap: 2px;
-// }
-// .sec2
-// {
-//     // border: 1px solid black;
-//     width: 43%;height: 100%;
-//     background-color: #000000;
-//     border-radius: 9% 9% 9% 9%; display: flex; flex-direction: row;
-//     justify-content: center;padding-top: 28px;
-// }
-
-
-// // Ici commence les style pour la section humidité sol
-
-
-
-
-
-
-
-//    #imtomate
-//     {
-//       width: 100%;height: 100%;border-radius: 13px;
-//     }
-//     #im1{width: 30%; height: 52%;}
-
-
-//     .sec1 .sec1-layer_scale {
-//         border-radius: 50%;
-//         -moz-transform: scale(0);
-//         -webkit-transform: scale(0);
-//         -ms-transform: scale(0);
-//         transform: scale(0); display: none;
-//     }
-//     .sec1:hover .sec1-layer_scale, 
-//     .sec1.active .sec1-layer_scale {        
-//         border-radius: 0%;
-//         -moz-transform: scale(3);
-//         -webkit-transform: scale(1);
-//         -ms-transform: scale(1);
-//         transform: scale(1);
-//         color: white; font-size: 10px; display: block; cursor: pointer;
-//     }
-
-//     .sec2 .sec2-layer_scale {
-//         border-radius: 50%;
-//         -moz-transform: scale(0);
-//         -webkit-transform: scale(0);
-//         -ms-transform: scale(0);
-//         transform: scale(0); display: none;
-//     }
-//     .sec2:hover .sec2-layer_scale, 
-//     .sec2.active .sec2-layer_scale {        
-//         border-radius: 0%;
-//         -moz-transform: scale(3);
-//         -webkit-transform: scale(1);
-//         -ms-transform: scale(1);
-//         transform: scale(1);
-//         color: white; font-size: 10px; display: block; cursor: pointer;
-//     }
-   
     
