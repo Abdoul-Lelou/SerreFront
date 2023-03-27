@@ -1,6 +1,6 @@
 .titre{
     border: 2px solid;
-  font-size: 20px;
+  font-size: 22px;
   display: flex;
   justify-content: center;
   width: 50%;
@@ -11,20 +11,21 @@
   padding-top: 5px;
   /*  margin-top: 20px;  */
    height: 50px;
-   background-color: white; 
+   background-color: #D1F4F0;
    align-items: center;
+
 }
 .font{
 height: 30px;
 }
-.bag{
-    background-color: #46CC6B; 
-}img{
+.bag{ background-color: #D1F4F0;
     height: 30px;
+  
+
 }
 .header{
     height: 60px;
-}.bas{
+}.bas{    
     height: 130px;
     width: 200px; 
     border-radius: 10px;
@@ -52,10 +53,14 @@ height: 30px;
 }#haut{
     margin-top: 90px; 
     width: 100%;
-    height: 500px;
+    height: 100%;
 }
 #ht{
     
     height: auto;
 }
 
+p{
+   display: flex;
+   justify-content: center;
+}
