@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -10,11 +11,14 @@ export class SideBarComponent implements OnInit{
   
   switchRoof:boolean = false;
   fan:boolean = false;
+  showHome:boolean = false
   showDashboard:boolean = true;
   showInfo:boolean = false;
   currentDate:any;
   imgArros:any="https://media.discordapp.net/attachments/1033044458092118168/1087432078246813706/icons8-water-plants-66.png?width=72&height=72";
   
+  
+
   ngOnInit(): void {
     this.showTime();
     throw new Error('Method not implemented.');
@@ -30,9 +34,11 @@ export class SideBarComponent implements OnInit{
 
   switchInfo () {
     if (this.showDashboard == true){
-      this.showInfo = false;
-    }else{
       this.showDashboard = false;
+      this.showInfo = true;
+    }else{
+      this.showDashboard = true;
+      this.showInfo = false;
     }
   }
 
@@ -47,16 +53,28 @@ export class SideBarComponent implements OnInit{
 
 
   displayStyle = "none";
+  displaySerre = "none";
  
 
 openPopup() {
 	
   this.displayStyle = "block";
-
   
 }
+
 closePopup() {
   this.displayStyle = "none";
+  
+}
+
+openSerre() {
+	
+  this.displaySerre = "block";
+  
+}
+
+closeSerre() {
+  this.displaySerre = "none";
   
 }
 }

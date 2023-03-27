@@ -1,12 +1,12 @@
 <!--Main Navigation-->
-<header class="z-3 position-absolute p-2 rounded-3" >
+<header class="z-3 position-absolute p-2 rounded-3">
     <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse" style="background-color: #4b4022; ">
-        <div class="position-sticky  h-100" >
+    <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse" style="background-color: #000000; ">
+        <div class="position-sticky  h-100">
             <div class="list-group list-group-flush mx-3 mt-2 p-4"
                 style="background-color: #D1F4F0; border-radius: 10px 0px 0 0">
                 <img src="../../assets/logo.jpeg" alt="" width="130" height="130" srcset=""
-                    class="rounded-circle m-auto mb-2">
+                    class="rounded-circle m-auto mb-2" routerLink="home">
 
                 <span href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
                     style="background-color: #D1F4F0;" (click)="openPopup()">
@@ -32,13 +32,13 @@
                 <div class=" mb-2 shadow" style="background-color: #D1F4F0; ">
                     <span (click)="switchFan()" *ngIf="fan" style="background-color: #D1F4F0;"
                         class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
-                        <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012082438185/fanGIF.gif" alt="" width="90" height="90" srcset=""
-                            class="rounded-circle">
+                        <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012082438185/fanGIF.gif"
+                            alt="" width="90" height="90" srcset="" class="rounded-circle">
                     </span>
                     <span (click)="switchFan()" *ngIf="!fan" style="background-color: #D1F4F0;"
                         class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
-                        <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012443140096/fanPNG.png" alt="" width="90" height="90" srcset=""
-                            class="rounded-circle bg-light">
+                        <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012443140096/fanPNG.png"
+                            alt="" width="90" height="90" srcset="" class="rounded-circle bg-light">
                     </span>
                     <a href="#" class="m-auto  text text-success d-flex justify-content-center" (click)="switchFan()">
                         <span class="material-symbols-outlined" *ngIf="fan" style="color:green">toggle_on</span>
@@ -69,84 +69,164 @@
 <!--Main layout-->
 &nbsp;
 <main class="shadow bg-light pb-1 pt-0  " style=" border-radius: 0 20px 20px 0;">
-    <nav  class="navbar  mb-4 d-flex justify-content-center " >
+    <nav class="navbar  mb-4 d-flex justify-content-center ">
         <!-- Container wrapper -->
-        <div class="container p-2  w-100 nav shadow  d-flex justify-content-around border mb-4" >
+        <div class="container p-2  w-100 nav shadow  d-flex justify-content-around border mb-4">
             <!-- Toggle button -->
             <!-- Brand -->
-            <a class="navbar-brand text text-danger" href="#" routerLink="info" data-toggle="tooltip" data-placement="top" title="Info serre">
+            <a class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalToggle" role="button" data-toggle="tooltip" data-placement="top"
+                title="Info serre">
                 <span class="material-symbols-outlined" style=" size: 40px;">info</span>
             </a>
-    
-            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top" title="localisation">
+
+            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top"
+                title="localisation">
                 <span class="material-symbols-outlined" style=" size: 40px;">location_on</span>
             </a>
-    
-            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top" title="Mot de passe">
+
+            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top"
+                title="Mot de passe">
                 <span class="material-symbols-outlined" style=" size: 40px;">sync_lock</span>
             </a>
-    
-            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" routerLink="login" data-placement="top" title="Deconnexion">
+
+            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" routerLink="login"
+                data-placement="top" title="Deconnexion">
                 <span class="material-symbols-outlined" style=" size: 40px;">logout</span>
             </a>
-    
-            
+
+           
+
+
             <!-- <a class="navbar-brand " href="#" style="display: block; margin-top: -30px;" data-toggle="tooltip" data-placement="top" title="Deconnexion"> -->
-                <!-- <span class="fs-6">{{currentDate}}</span> -->
-                <!-- <div> -->
-                    <!-- <span class="material-symbols-outlined" style=" size: 40px;">logout</span> -->
-                <!-- </div> -->
+            <!-- <span class="fs-6">{{currentDate}}</span> -->
+            <!-- <div> -->
+            <!-- <span class="material-symbols-outlined" style=" size: 40px;">logout</span> -->
+            <!-- </div> -->
             <!-- </a> -->
             <!-- Search form -->
             <!-- Right links -->
-    
+
         </div>
         <!-- Container wrapper -->
     </nav>
     <div class="container mb-4">
-        <app-dashbord></app-dashbord>
+        <app-dashbord *ngIf="showDashboard"></app-dashbord>
+        <app-infos-serre *ngIf="showInfo"></app-infos-serre>
     </div>
 
 
-    <div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
-        <div class="modal-dialog" role="document" style="background-color: #FFFFFF; height: 90%;width: 800px;opacity: 1;padding: 0px;">
-          <div class="modal-content" style="background-color: white;height: 100%; width: 100%;padding: 0px;">
-            <div class="modal-header" style="background-color: #FFFFFF;height: 26px;padding-left: 94%;">
-              <button style="height: 25px;" type="button" class="close" aria-label="Close" (click)="closePopup()">
-                <span aria-hidden="true">&times;</span>
-              </button>
+    <div class="modal"
+        style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;"
+        tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document"
+            style="background-color: #FFFFFF; height: 90%;width: 800px;opacity: 1;padding: 0px;">
+            <div class="modal-content" style="background-color: white;height: 100%; width: 100%;padding: 0px;">
+                <div class="modal-header" style="background-color: #FFFFFF;height: 26px;padding-left: 94%;">
+                    <button style="height: 25px;" type="button" class="close" aria-label="Close" (click)="closePopup()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body"
+                    style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px 10px;display: flex;flex-direction: column;gap: 8px;padding-bottom: 16px;">
+                    <div
+                        style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
+                        <img [src]="imgArros" alt="" style="width: 70%; height: 100%;">
+                    </div>
+                    <p style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Informations
+                        d’arrosage</p>
+                    <div class="d-flex justify-content"
+                        style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
+                        <div class="d-flex justify-content" style="gap: 100px;">
+                            <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
+                        </div>
+                        <div class="d-flex justify-content" style="gap: 140px;">
+                            <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">06h 00</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">70s</p>
+                        </div>
+                        <div class="d-flex justify-content" style="gap: 140px;">
+                            <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">19h 00</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
+                        </div>
+                        <button
+                            style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
+                    </div>
+
+                </div>
+
             </div>
-           
-            <div class="modal-body" style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px 10px;display: flex;flex-direction: column;gap: 8px;padding-bottom: 16px;">
-               <div style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
-                  <img [src]="imgArros" alt="" style="width: 70%; height: 100%;">
-               </div>
-               <p style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Informations d’arrosage</p>
-               <div class="d-flex justify-content" style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
-                  <div class="d-flex justify-content" style="gap: 100px;">
-                    <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
-                    <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
-                    <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
-                  </div>
-                  <div class="d-flex justify-content" style="gap: 140px;">
-                    <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
-                    <p style="color: #000000;font-weight: bold; text-align: center; ">06h 00</p>
-                    <p style="color: #000000;font-weight: bold; text-align: center; ">70s</p>
-                  </div>
-                  <div class="d-flex justify-content" style="gap: 140px;">
-                    <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
-                    <p style="color: #000000;font-weight: bold; text-align: center; ">19h 00</p>
-                    <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
-                  </div>
-                  <button style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
-               </div>
-               
-            </div>
-           
-          </div>
         </div>
     </div>
 
 
+
+
+
+
+
+
 </main>
 <!--Main layout-->
+
+
+
+<div class="modal modal-xl fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalToggleLabel">Information du serre</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+
+                <div class="row">
+                    <div class="col-md-6 side-image">
+                        <h4 style="margin-top: 250px; color: #0C24F6; margin-left: 50px;">Dimensions</h4>
+                        <p style="margin-left: 50px; font-size: large;">
+                            2,44 x 3,67m
+                        </p>
+                        <h4 style="color: #0C24F6; margin-left: 50px;">Capacité de production</h4>
+                        <p style="margin-left: 50px; font-size: large;">
+                            300 kg/cycle
+                        </p>
+                        <h4 style="color: #0C24F6; margin-left: 50px;">Espèces produits</h4>
+                        <p style="margin-left: 50px; font-size: large;">
+                            Tomate “Fandango”
+                        </p>
+                    </div>
+                    <div class="col-md-6 right">
+                        <div class="trait"></div>
+                        <div class="im3"></div>
+                        <div class="im4"></div>
+
+
+                        <div style="margin-bottom: 300px;">
+                            <h4 style="color: #0C24F6; margin-left: 10px;">Matériels utilisés</h4><br>
+
+                            <p style="margin-left: 10px; font-size: large;">
+                                Serre en tube d’assier, couverte de plexiglass et dotée de deux
+                                évents pour une ventilation améliorée, d'un seuil bas,
+                                d'un beau volume intérieur et d'une porte  pour
+                                un accès facile via un code d'accès.
+
+                            </p>
+                        </div>
+                        <!-- <div> -->
+                        <!-- <div>
+            
+                    </div> -->
+                        <!-- </div> -->
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

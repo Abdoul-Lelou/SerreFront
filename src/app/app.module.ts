@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReglageComponent } from './pages/reglage/reglage.component';
 import { JtwInterceptor } from './helpers/interceptor.service';
+import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
 
 
 
@@ -25,6 +26,7 @@ import { JtwInterceptor } from './helpers/interceptor.service';
     SideBarComponent,
     LoginComponent,
     ReglageComponent,
+    InfosSerreComponent
     // NavBarComponent,
     // SideBarComponent,
     // LoginComponent,

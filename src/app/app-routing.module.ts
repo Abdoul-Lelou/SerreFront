@@ -6,7 +6,7 @@ import { SideBarComponent } from './pages/side-bar/side-bar.component';
 
 const routes: Routes = [
   {component:LoginComponent, path:'login'},
-  {component:InfosSerreComponent, path:'info'},
+  // {component:InfosSerreComponent, path:'info'},
   {component:SideBarComponent, path:'home'}
 
 

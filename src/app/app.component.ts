@@ -19,8 +19,7 @@ export class AppComponent {
         if (event.url === '/login' || event.url === '/') {
           this.showLogin = true;
         } else {
-          this.showLogin = false;
-          
+          this.showLogin = false; 
         }
       }
     });
