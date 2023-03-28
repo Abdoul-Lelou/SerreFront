@@ -1,5 +1,6 @@
 import { Component,  OnInit} from '@angular/core';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-dashbord',
   templateUrl: './dashbord.component.html',
@@ -7,8 +8,48 @@ import { Component,  OnInit} from '@angular/core';
 })
 export class DashbordComponent implements OnInit {
 // [x: string]: string;
+// Variables de controle popup clé de porte
+  registerForm!:FormGroup;
+  title = 'login';
+  submitted = false;
+  spin= false;
+  errorSms:any;
+  constructor(private formBuilder:FormBuilder, private authService: UserService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.registerForm = this.formBuilder.group({
+      clePorte:['', [Validators.required, Validators.minLength(5)]],
+  
+  })
+  }
+  onSubmit(){
+    this.submitted = true
+    this.spin = true
+
+     if(this.registerForm.invalid){
+      this.spin = false
+      return ;
+    }
+
+    const user ={
+      clePort: this.registerForm.value.clePorte,
+      
+    }
+    console.log(user);
+    
+    return this.authService.envoiCle(user.clePort).subscribe(
+      data=>{
+          console.log(data);
+      },
+      error =>{
+        console.log(error);
+        
+      }
+    )
+    
+    
+  }
   isOn= false;
 
   aroz:boolean = false;
