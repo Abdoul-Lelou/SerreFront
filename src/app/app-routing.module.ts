@@ -5,7 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SideBarComponent } from './pages/side-bar/side-bar.component';
 
 const routes: Routes = [
-  {component:LoginComponent, path:'login'},
+  {component:LoginComponent, path:''},
   // {component:InfosSerreComponent, path:'info'},
   {component:SideBarComponent, path:'home'}
 

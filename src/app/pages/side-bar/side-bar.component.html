@@ -6,23 +6,31 @@
         <div class="position-sticky shadow h-100">
             <div class="list-group list-group-flush mx-3 mt-2 p-4"
                 style="background-color: #D1F4F0; border-radius: 10px 0px 0 0">
-                <img src="../../assets/logo.jpeg" alt="" width="130" height="130" class="rounded-circle m-auto mb-2"
+                <img src="../../assets/logo.jpeg" alt="" width="130" height="130" role="button" class="rounded-circle m-auto mb-2" title="Accueil"
                     (click)="reloadHome()">
 
-                <a href="#" class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
-                    style="background-color: #D1F4F0;" data-bs-toggle="modal" href="#exampleModal" role="button"
+                <em role="button" class="list-group-item list-group-item-action py-2  d-flex justify-content-center"
+                    style="background-color: #D1F4F0;" data-bs-toggle="modal" href="#exampleModal" role="button" title="Systeme Arrosage"
                     data-toggle="tooltip" data-placement="top">
                     <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
-                </a>
-                <span (click)="switchToit()"
+                </em>
+                <span role="button" (click)="switchToit()" title="Gestion toiture"
                     class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
                     style="background-color: #D1F4F0;">
                     <img src="../../assets/roofing.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
                 </span>
-                <a href="#" class="m-auto text text-success" (click)="switchToit()">
-                    <span class="material-symbols-outlined" *ngIf="switchRoof" style="color:green">toggle_on</span>
-                    <span class="material-symbols-outlined " *ngIf="!switchRoof" style="color:red">toggle_off</span>
-                </a>
+                <em role="button"  class="m-auto text text-success" (click)="switchToit()">
+                    <!-- <span class="material-icons" *ngIf="switchRoof" style="color:green">toggle_on</span>
+                    <span class="material-icons " *ngIf="!switchRoof" style="color:red">toggle_off</span> -->
+                    <svg xmlns="http://www.w3.org/2000/svg" *ngIf="switchRoof" width="25" height="25" fill="currentColor" class="bi bi-toggle2-on" viewBox="0 0 16 16">
+                        <path d="M7 5H3a3 3 0 0 0 0 6h4a4.995 4.995 0 0 1-.584-1H3a2 2 0 1 1 0-4h3.416c.156-.357.352-.692.584-1z"/>
+                        <path d="M16 8A5 5 0 1 1 6 8a5 5 0 0 1 10 0z"/>
+                      </svg>
+                    <svg style="color:red" xmlns="http://www.w3.org/2000/svg" *ngIf="!switchRoof"  width="25" height="25" fill="currentColor" class="bi bi-toggle2-off" viewBox="0 0 16 16">
+                        <path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 0 0-1-3h4a3 3 0 1 1 0 6H9z"/>
+                        <path d="M5 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1A5 5 0 1 0 5 3a5 5 0 0 0 0 10z"/>
+                      </svg>
+                </em>
 
             </div>
 
@@ -32,20 +40,31 @@
                 style="background-color: #D1F4F0; border-radius: 0 0 0 10px;">
 
                 <div class=" mb-2 shadow" style="background-color: #D1F4F0; ">
-                    <span (click)="switchFan()" *ngIf="fan" style="background-color: #D1F4F0;"
+                    <span role="button" (click)="switchFan()" *ngIf="fan" style="background-color: #D1F4F0;"
                         class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
                         <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012082438185/fanGIF.gif"
                             alt="" width="90" height="90" srcset="" class="rounded-circle">
                     </span>
-                    <span (click)="switchFan()" *ngIf="!fan" style="background-color: #D1F4F0;"
+                    <span role="button" (click)="switchFan()" *ngIf="!fan" style="background-color: #D1F4F0;"
                         class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
                         <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012443140096/fanPNG.png"
                             alt="" width="90" height="90" srcset="" class="rounded-circle bg-light">
                     </span>
-                    <a href="#" class="m-auto  text text-success d-flex justify-content-center" (click)="switchFan()">
-                        <span class="material-symbols-outlined" *ngIf="fan" style="color:green">toggle_on</span>
-                        <span class="material-symbols-outlined " *ngIf="!fan" style="color:red">toggle_off</span>
-                    </a>
+
+                    
+                    <em role="button" class="m-auto  text text-success d-flex justify-content-center" (click)="switchFan()">
+                        <!-- <span class="material-icons" *ngIf="fan" style="color:green">toggle_on</span>
+                        <span class="material-icons " *ngIf="!fan" style="color:red">toggle_off</span> -->
+
+                        <svg xmlns="http://www.w3.org/2000/svg" *ngIf="fan" width="25" height="25" fill="currentColor" class="bi bi-toggle2-on" viewBox="0 0 16 16">
+                            <path d="M7 5H3a3 3 0 0 0 0 6h4a4.995 4.995 0 0 1-.584-1H3a2 2 0 1 1 0-4h3.416c.156-.357.352-.692.584-1z"/>
+                            <path d="M16 8A5 5 0 1 1 6 8a5 5 0 0 1 10 0z"/>
+                          </svg>
+                        <svg style="color:red" xmlns="http://www.w3.org/2000/svg" *ngIf="!fan"  width="25" height="25" fill="currentColor" class="bi bi-toggle2-off" viewBox="0 0 16 16">
+                            <path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 0 0-1-3h4a3 3 0 1 1 0 6H9z"/>
+                            <path d="M5 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1A5 5 0 1 0 5 3a5 5 0 0 0 0 10z"/>
+                          </svg>
+                    </em>
 
                 </div>
 
@@ -76,24 +95,38 @@
         <div class="container p-2  w-100 nav shadow  d-flex justify-content-around border mb-4">
             <!-- Toggle button -->
             <!-- Brand -->
-            <a class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
+            <a role="button" class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
                 data-toggle="tooltip" data-placement="top" title="Info serre">
-                <span class="material-symbols-outlined" style=" size: 40px;">info</span>
+                <!-- <span class="material-icons" style=" size: 40px;">info</span> -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                  </svg>
             </a>
 
-            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top"
+            <a role="button" role="button" class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top"
                 title="localisation">
-                <span class="material-symbols-outlined" style=" size: 40px;">location_on</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  </svg>
             </a>
 
-            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top"
+            <a role="button" class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalPassword" role="button"
+            data-toggle="tooltip" data-placement="top" 
                 title="Mot de passe">
-                <span class="material-symbols-outlined" style=" size: 40px;">sync_lock</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                  </svg>
             </a>
 
-            <a class="navbar-brand text text-danger" href="#" data-toggle="tooltip" routerLink="login"
+            <a  (click)="logout()" role="button" class="navbar-brand text text-danger" href="#" data-toggle="tooltip" routerLink="login"
                 data-placement="top" title="Deconnexion">
-                <span class="material-symbols-outlined" style=" size: 40px;">logout</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                  </svg>
             </a>
 
 
@@ -102,7 +135,7 @@
             <!-- <a class="navbar-brand " href="#" style="display: block; margin-top: -30px;" data-toggle="tooltip" data-placement="top" title="Deconnexion"> -->
             <!-- <span class="fs-6">{{currentDate}}</span> -->
             <!-- <div> -->
-            <!-- <span class="material-symbols-outlined" style=" size: 40px;">logout</span> -->
+            <!-- <span class="material-icons" style=" size: 40px;">logout</span> -->
             <!-- </div> -->
             <!-- </a> -->
             <!-- Search form -->
@@ -176,7 +209,7 @@
                 <div class="modal-body"
                     style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px 10px;display: flex;flex-direction: column;gap: 8px;padding-bottom: 16px;">
                     <div
-                        style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
+                        style="background-color: #D1F4F0;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
                         <img [src]="imgArros" alt="" style="width: 70%; height: 100%;">
                     </div>
                     <p *ngIf="titleArrosage"
@@ -186,7 +219,7 @@
                         style="text-align: center;color: #000000;font-weight: bold;margin-bottom: -3px;">Définir vos
                         heures et durées d’arrosage</p>
                     <div *ngIf="infoArrosage" class="d-flex justify-content"
-                        style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
+                        style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #D1F4F0;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
                         <div class="d-flex justify-content" style="gap: 100px;">
                             <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
                             <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
@@ -228,7 +261,7 @@
                     </div>
 
                     <div *ngIf="!infoArrosage" class="d-flex justify-content"
-                        style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
+                        style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #D1F4F0;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
 
                         <div class="d-flex justify-content" style="gap: 170px;margin-bottom: -3px;">
                             <p style="color: #000000;font-weight: bold; text-align: center;">Premier arrosage</p>
@@ -374,4 +407,21 @@
 </div>
 
 
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="modal modal-xl fade" id="exampleModalPassword" aria-hidden="true" aria-labelledby="exampleModalPassword"
+    tabindex="-1" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalPassword" style="margin:0 425px">Modifier mot de passe</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                <app-modif-password></app-modif-password>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationStart, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -19,11 +20,33 @@ export class SideBarComponent implements OnInit{
   currentDate:any;
   imgArros:any="https://media.discordapp.net/attachments/1033044458092118168/1087432078246813706/icons8-water-plants-66.png?width=72&height=72";
   
+  registerForm!:FormGroup;
+
+  submitted = false;
+  spin= false;
+  errorSms:any;
+  img: boolean = false;
   
+  constructor(private formBuilder:FormBuilder) {}
 
   ngOnInit(): void {
     this.showTime();
-    throw new Error('Method not implemented.');
+    this.registerForm = this.formBuilder.group({
+      password :['', [Validators.required, Validators.minLength(6)]],
+      password1:['', [Validators.required, Validators.minLength(6)]],
+      password2:['', [Validators.required, Validators.minLength(6)]]
+  })
+  }
+
+
+  onSubmit(){
+    this.submitted = true
+    this.spin = true
+
+     if(this.registerForm.invalid){
+      this.spin = false
+      return ;
+    }
   }
 
   switchToit(){
@@ -88,6 +111,7 @@ closeSerre() {
 
 reloadHome = () =>window.location.pathname ='home';
 
+logout = () =>window.location.pathname ='login';
 
 
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import tableauSol from '../../histo.json';
+import tableauSol from '../../histo2.json';
  import tableau from '../../histo.json'; 
 
 

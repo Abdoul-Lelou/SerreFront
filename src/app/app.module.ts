@@ -20,6 +20,7 @@ import { TableauComponent } from './pages/tableau/tableau.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TempHumComponent } from './pages/temp-hum/temp-hum.component';
+import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
 
 
 
@@ -33,7 +34,8 @@ import { TempHumComponent } from './pages/temp-hum/temp-hum.component';
     ReglageComponent,
     InfosSerreComponent,
     TableauComponent,
-    TempHumComponent
+    TempHumComponent,
+    ModifPasswordComponent
     // NavBarComponent,
     // SideBarComponent,
     // LoginComponent,

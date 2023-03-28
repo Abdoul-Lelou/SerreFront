@@ -10,7 +10,7 @@
     <input type="date" id="form1" class="form-control " (change)="search($event)"
         style="border: 2px solid; width: 17%; margin:auto 0px; max-height:50px" />
   <!-- <label class="form-label" for="form1"></label> -->
-  <img src="https://media.discordapp.net/attachments/1033044458092118168/1087430544268210276/icons8-sun-50.png" height="65" class="rounded-circle pe-auto" (click)="onclick()" alt="" >
+  <img src="https://media.discordapp.net/attachments/1033044458092118168/1087430544268210276/icons8-sun-50.png" height="65" class="rounded-circle pe-auto" title="ensoleillement" (click)="onclick()" role="button" >
   </span>
 
 
@@ -99,7 +99,7 @@
       <input type="date" id="form1" class="form-control " (change)="search($event)"
           style="border: 2px solid; width: 17%; margin:auto 0px; max-height:50px" />
     <!-- <label class="form-label" for="form1"></label> -->
-    <img src="assets/humSol.png" class="rounded-circle pe-auto" (click)="on()" alt="" >
+    <img src="assets/humSol.png" class="rounded-circle pe-auto" title="Humidite temperature" (click)="on()" role="button" >
     </span>
   
   
@@ -130,20 +130,21 @@
             <tr>
               <th scope="col"><p> Date<img src="assets/calen.web" alt="" ></p> </th> 
               <!-- <th scope="col">Heure</th> -->
-              <th scope="col"><i class="bi bi-thermometer-half"></i><p> Temperature<img src="assets/tour.png" alt=""
+              <th scope="col"><i class="bi bi-thermometer-half"></i><p> HumiditeSol<img src="assets/tour.png" alt=""
                   style="max-height: 15px;background: #000; "></p> </th>
-              <th scope="col"> <i class="bi bi-droplet-half"></i><p>Humidite <img src="assets/one.png" alt=""
+              <th scope="col"> <i class="bi bi-droplet-half"></i><p>Ensoleillement <img src="assets/one.png" alt=""
                   style="max-height: 15px;background: #000; "></p> </th>
   
             </tr>
           </thead>
           <tbody>
           
-            <tr *ngFor="let i of histo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+            <tr *ngFor="let en of histoSol| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
               <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
-              <td><p>{{i.date}}</p></td>
-              <td><p>{{i.temperature}}</p></td>
-              <td><p>{{i.humidite}}</p></td>
+              <td><p>{{en.date}}</p></td>
+              <td><p>{{en.humiditeSol}}</p></td>
+              <td><p>{{en.ensol}}</p></td>
+             
   
             </tr>
           </tbody>
