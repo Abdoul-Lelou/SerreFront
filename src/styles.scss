@@ -2,7 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
-@import 'material-icons/iconfont/material-icons.css';
+@import 'ngx-toastr/toastr';
+@import 'ngx-toastr/toastr-bs5-alert';
 
 .material-icons {
     font-family: 'Material Icons';

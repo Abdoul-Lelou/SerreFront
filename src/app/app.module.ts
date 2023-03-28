@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { SideBarComponent } from './pages/side-bar/side-bar.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashbordComponent } from './pages/dashbord/dashbord.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 // import { TableauComponent } from './components/tableau/tableau.component';
 import { NgbDatepickerModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -64,7 +66,9 @@ import { ModifPasswordComponent } from './pages/modif-password/modif-password.co
     }),
     HttpClientModule,
     NgbDatepickerModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
 
 
   ],

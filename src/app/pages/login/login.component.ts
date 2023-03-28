@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +18,7 @@ export class LoginComponent  implements OnInit{
   errorSms= false;
   img: boolean = false;
 
-  constructor(private formBuilder:FormBuilder, private authService: UserService, private router: Router) {}
+  constructor(private formBuilder:FormBuilder, private authService: UserService, private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(){
 
@@ -28,6 +30,10 @@ export class LoginComponent  implements OnInit{
   })
   }
 
+  showSuccess() {
+    this.toastr.error('Erreur', 'Email ou mot de passe incorrect!');
+  }
+  
   onSubmit(){
     this.submitted = true
     this.spin = true
@@ -53,8 +59,8 @@ export class LoginComponent  implements OnInit{
       },
       error =>{
         this.errorSms = true;
+        this.showSuccess();
         setTimeout(()=> {this.spin = false; this.errorSms = false;},2000)
-        console.log(error);
         
       }
     )
