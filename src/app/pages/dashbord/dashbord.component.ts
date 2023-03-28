@@ -1,5 +1,5 @@
 import { Component,  OnInit} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl,AbstractControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-dashbord',
@@ -7,49 +7,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./dashbord.component.scss']
 })
 export class DashbordComponent implements OnInit {
-// [x: string]: string;
-// Variables de controle popup clé de porte
-  registerForm!:FormGroup;
-  title = 'login';
-  submitted = false;
-  spin= false;
-  errorSms:any;
-  constructor(private formBuilder:FormBuilder, private authService: UserService) {}
-
-  ngOnInit() {
-
-    this.registerForm = this.formBuilder.group({
-      clePorte:['', [Validators.required, Validators.minLength(5)]],
-  
-  })
-  }
-  onSubmit(){
-    this.submitted = true
-    this.spin = true
-
-     if(this.registerForm.invalid){
-      this.spin = false
-      return ;
-    }
-
-    const user ={
-      clePort: this.registerForm.value.clePorte,
-      
-    }
-    console.log(user);
-    
-    return this.authService.envoiCle(user.clePort).subscribe(
-      data=>{
-          console.log(data);
-      },
-      error =>{
-        console.log(error);
-        
-      }
-    )
-    
-    
-  }
+[x: string]: any;
+  cmp:number =0;
   isOn= false;
 
   aroz:boolean = false;
@@ -134,10 +93,94 @@ closePopupInfo() {
   this.displayStyle2 = "none";
   
 }
+// [x: string]: string;
+// Variables de controle popup clé de porte
+form: FormGroup = new FormGroup({
+  code: new FormControl(''),
+  acceptTerms: new FormControl(false),
+});
+submitted = false;
+
+constructor(private formBuilder: FormBuilder) {}
+  
+
+ngOnInit(): void {
+  this.form = this.formBuilder.group(
+    {
+      code: ['', Validators.required, Validators.minLength(6),Validators.maxLength(20)],
+     
+      
+    },
+    
+  );
+}
+
+get f(): { [key: string]: AbstractControl } {
+  return this.form.controls;
+}
+
+
+
+onSubmit(): void {
+  this.submitted = true;
+  if(this.submitted==true)
+  {
+    this.cmp++;
+  }
+console.log(this.cmp);
+  if (this.cmp==3)
+  {
+    this.submitted=false;
+  }
+
+  if (this.form.invalid) {
+    return;
+  }
+
+  console.log(JSON.stringify(this.form.value, null, 2));
+}
+
+onReset(): void {
+  this.submitted = false;
+  this.form.reset();
+}
+
+
+}
+
+  
+  // onSubmit(){
+  //   this.submitted = true
+  //   this.spin = true
+
+  //    if(this.registerForm.invalid){
+  //     this.spin = false
+  //     return ;
+  //   }
+
+  //   const user ={
+  //     clePort: this.registerForm.value.clePorte,
+      
+  //   }
+  //   console.log(user);
+    
+  //   return this.authService.envoiCle(user.clePort).subscribe(
+  //     data=>{
+  //         console.log(data);
+  //     },
+  //     error =>{
+  //       console.log(error);
+        
+  //     }
+  //   )
+    
+    
+  // }
+ 
 
  
 
-}
+
 
 
 
