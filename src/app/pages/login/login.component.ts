@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 @Component({
   selector: 'app-login',
@@ -12,10 +13,10 @@ export class LoginComponent  implements OnInit{
   title = 'login';
   submitted = false;
   spin= false;
-  errorSms:any;
+  errorSms= false;
   img: boolean = false;
 
-  constructor(private formBuilder:FormBuilder, private authService: UserService) {}
+  constructor(private formBuilder:FormBuilder, private authService: UserService, private router: Router) {}
 
   ngOnInit(){
 
@@ -43,10 +44,16 @@ export class LoginComponent  implements OnInit{
     console.log(user);
     
     return this.authService.getConnexion(user).subscribe(
-      data=>{
-          console.log(data);
+      res=>{
+          console.log(res);
+          let infoConnexion = res;
+          if(infoConnexion.data){
+            this.router.navigateByUrl('home');
+          }
       },
       error =>{
+        this.errorSms = true;
+        setTimeout(()=> {this.spin = false; this.errorSms = false;},2000)
         console.log(error);
         
       }

@@ -8,6 +8,8 @@ import { Component,  OnInit} from '@angular/core';
 export class DashbordComponent implements OnInit {
 
   ngOnInit() {}
+
+  showHistorique:boolean = false
   isOn = false;
 
   aroz:boolean = false;
@@ -93,6 +95,13 @@ closePopupInfo() {
   
 }
 
+switchHistorique(){
+  if(this.showHistorique){
+    this.showHistorique = false
+  }else{
+    this.showHistorique = true
+  }
+}
  
 
 }

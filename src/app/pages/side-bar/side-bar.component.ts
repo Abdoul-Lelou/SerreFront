@@ -86,6 +86,8 @@ closeSerre() {
   this.displaySerre = "none"; 
 }
 
+reloadHome = () =>window.location.pathname ='home';
+
 
 
 }

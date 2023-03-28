@@ -19,6 +19,7 @@ import { InfosSerreComponent } from './pages/infos-serre/infos-serre.component';
 import { TableauComponent } from './pages/tableau/tableau.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { TempHumComponent } from './pages/temp-hum/temp-hum.component';
 
 
 
@@ -31,7 +32,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     LoginComponent,
     ReglageComponent,
     InfosSerreComponent,
-    TableauComponent
+    TableauComponent,
+    TempHumComponent
     // NavBarComponent,
     // SideBarComponent,
     // LoginComponent,

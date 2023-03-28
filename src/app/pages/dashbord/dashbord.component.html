@@ -1,5 +1,5 @@
 <!-- Conteneur principal dashboard -->
-<div class="d-flex flex-column p-2 bd-highlight" id="conteneurDash"> 
+<div class="d-flex flex-column p-2 bd-highlight" id="conteneurDash" *ngIf="!showHistorique"> 
  
   <div class="d-flex flex-column" id="BlocHaute">
       <h6 class="thhe">Données de la serre à l’instant</h6>
@@ -89,15 +89,15 @@
     <!-- Colone gauche (historique) -->
       <div class="d-flex flex-column" id="clonGauche">
           <p class="thhe">Historique données</p>
-          <div class="d-flex flex-column" id="ll">
-            <div class="sec1" id="noir1">
+          <div class="d-flex flex-column" id="ll" (click)="switchHistorique()">
+            <div class="sec1" id="noir1" >
                 <img [src]="image1Histo" alt="" class="iconHumEns">
                 <img [src]="image2Histo" alt="" class="iconHumEns">
                 <div class="sec1-layer_top sec1-layer_scale">
                   <div class="sec1-text">Historique Hum_Sol(%)<br>Ensol(%)</div>
                 </div>
             </div>
-            <div class="sec2" id="noir2">
+            <div class="sec2" id="noir2" (click)="switchHistorique()">
                 <img [src]="image3Histo" alt="" class="iconeTemp">
                 <img [src]="image4Histo" alt="" class="iconHumEns">
                 <div class="sec2-layer_top sec2-layer_scale">
@@ -186,6 +186,7 @@
   </div>
 
 </div>
+<app-tableau *ngIf="showHistorique"></app-tableau>
 
 <!-- LE POPUP POUR CODE DE DEVEROUILLAGE PORTE -->
                

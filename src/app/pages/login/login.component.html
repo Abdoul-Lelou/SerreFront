@@ -1,8 +1,6 @@
 
   <form id="form" (submit)="onSubmit()" [formGroup]="registerForm">
-    <div *ngIf="errorSms!">
-      <span>{{errorSms}}</span>
-    </div>
+   
     <div class="wrapper w-75">
       <div class="container main">
         <div class="row">
@@ -11,8 +9,16 @@
             <div class="im3" (click)="cach()" *ngIf="img" style="cursor: pointer;"></div>
           </div>
           <div class="col-md-6 right">
-            <div class="input-box">
-              <header style="font-size: 30px;">Connexion</header><br>
+        
+              
+            <em class=" border text text-danger fs-6">Email ou mot de passe incorrect</em>
+          
+            <div class="input-box border border-danger">
+              <header style="font-size: 30px;">
+                Connexion
+              </header><br>
+
+             
 
               <div class="input-field">
 
