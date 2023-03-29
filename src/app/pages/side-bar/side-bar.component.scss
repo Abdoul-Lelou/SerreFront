@@ -44,7 +44,11 @@
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   }
 
- 
+ .modalSerre{
+  max-width: fit-content;
+  // border: 1px solid red;
+  margin-left: 18%;
+ }
 
   .nav{
     max-width: 70%;
@@ -85,7 +89,9 @@
   border-radius: 10px;
   background: white;
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-  border: 1px solid blue;
+  padding: 5px;
+  margin: 10px;
+  // border: 1px solid blue;
 
 }
 
