@@ -42,20 +42,24 @@ export class ModifPasswordComponent {
       return ;
     }
 
-  const user:User={
+  const user={
     newPassword: this.registerForm.value.password1, 
-    password: this.registerForm.value.password
+    oldPassword: this.registerForm.value.password
   }
-  const id= localStorage.getItem('id')?.replace(/"/g, '')
-  console.log(id?.replace(/"/g, ''));
+  const ids= localStorage.getItem('id')?.replace(/"/g, '');
+  const id = ids?.split(' ').join('')
+  console.log(id);
   
     return this.authService.update(id,user).subscribe(
       res=>{
           console.log(res);
-          
+          this.toastr.success("Mot de passe mis à jour avec succès")
+          this.ngOnInit()
+          this.spin = false
       },error =>{
         console.log(error);
-        
+        this.toastr.error(error)
+        setTimeout(()=> this.spin = false, 2000 );
       }
     )
 

@@ -45,6 +45,6 @@ export class UserService {
   }
 
   update(id:any,user:User){
-    return this.httpClient.post<User>(`${environment.apiUrl}/api/update/${id}`,user)
+    return this.httpClient.patch<User>(`${environment.apiUrl}/api/update/${id}`,user)
   }
 }

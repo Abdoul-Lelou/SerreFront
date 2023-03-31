@@ -9,4 +9,5 @@ export interface User {
         userId?: String
 
     }
+    message?:String
 }
