@@ -35,10 +35,16 @@ export class UserService {
       pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         //Ceci permet de garder l'utilisateur connecté entre les differentes pages
-        localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('currentUser', JSON.stringify(user.data?.token));
+        localStorage.setItem('id', JSON.stringify(user.data?.userId));
+
         this.currentUserSubject.next(user);
         return user;
       }));
 
+  }
+
+  update(id:any,user:User){
+    return this.httpClient.post<User>(`${environment.apiUrl}/api/update/${id}`,user)
   }
 }

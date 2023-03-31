@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { ToastrService } from 'ngx-toastr';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-login',
@@ -43,11 +44,11 @@ export class LoginComponent  implements OnInit{
       return ;
     }
 
-    const user ={
+    const user:User ={
       email: this.registerForm.value.email,
       password: this.registerForm.value.password
     }
-    console.log(user);
+    // console.log(user);
     
     return this.authService.getConnexion(user).subscribe(
       res=>{
@@ -58,9 +59,13 @@ export class LoginComponent  implements OnInit{
           }
       },
       error =>{
-        this.errorSms = true;
-        this.showSuccess();
+      
         setTimeout(()=> {this.spin = false; this.errorSms = false;},2000)
+        if(error == 'Not Found') return this.toastr.error('Erreur', 'Email introuvable!'); 
+        else return this.toastr.error('Erreur', 'Email ou mot de passe incorrect!'); 
+        // this.errorSms = true;
+        // this.showSuccess();
+        
         
       }
     )

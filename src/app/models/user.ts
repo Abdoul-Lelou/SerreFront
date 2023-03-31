@@ -1,7 +1,12 @@
 export interface User {
+    id?:any
     email?: String;
     password?: String;
-    // user: String;
+    newPassword?: String;
     token?: String;
-    data?:String
+    data?:{
+        token?:String;
+        userId?: String
+
+    }
 }
