@@ -23,6 +23,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TempHumComponent } from './pages/temp-hum/temp-hum.component';
 import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
+import { GooleMapsComponent } from './pages/goole-maps/goole-maps.component';
 
 
 
@@ -37,7 +38,8 @@ import { ModifPasswordComponent } from './pages/modif-password/modif-password.co
     InfosSerreComponent,
     TableauComponent,
     TempHumComponent,
-    ModifPasswordComponent
+    ModifPasswordComponent,
+    GooleMapsComponent
     // NavBarComponent,
     // SideBarComponent,
     // LoginComponent,

@@ -164,8 +164,19 @@
                <img [src]="portOuv" alt="" id="lampe"> 
             </span>
              <div class="form-check2 form-switch">
-               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="openPopup()" >
-               <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+               <!-- <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="openPopup()" >
+               <label class="form-check-label" for="flexSwitchCheckDefault"></label> -->
+               <div class="row  ">
+                <div class="col-1 d-flex justify-content-center align-items-center">
+                    <div class="p-1 border shadow bg-light  rounded-circle" style="font-size: 0" role="button" title="Saisir le code d'acces">
+                      <svg data-bs-toggle="modal" href="#exampleModalPassword" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-keyboard" viewBox="0 0 16 16">
+                        <path d="M14 5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12zM2 4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2z"/>
+                        <path d="M13 10.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm0-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5 0A.25.25 0 0 1 8.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 8 8.75v-.5zm2 0a.25.25 0 0 1 .25-.25h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5a.25.25 0 0 1-.25-.25v-.5zm1 2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-5-2A.25.25 0 0 1 6.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 6 8.75v-.5zm-2 0A.25.25 0 0 1 4.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 4 8.75v-.5zm-2 0A.25.25 0 0 1 2.25 8h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 2 8.75v-.5zm11-2a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm-2 0A.25.25 0 0 1 9.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 9 6.75v-.5zm-2 0A.25.25 0 0 1 7.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 7 6.75v-.5zm-2 0A.25.25 0 0 1 5.25 6h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5A.25.25 0 0 1 5 6.75v-.5zm-3 0A.25.25 0 0 1 2.25 6h1.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-1.5A.25.25 0 0 1 2 6.75v-.5zm0 4a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5zm2 0a.25.25 0 0 1 .25-.25h5.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-5.5a.25.25 0 0 1-.25-.25v-.5z"/>
+                      </svg>
+                        <i class="bi bi-briefcase"></i>
+                    </div>
+                </div>
+                </div>
              </div>
            </div>
            <div class="d-lex flex-column" id="deuxColonD">
@@ -379,6 +390,22 @@
 </div>
 </div>
 
+
+<div class="modal modal-md fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalPassword"
+    tabindex="-1" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow" style="background-color: #D1F4F0;">
+            <div class="modal-header shadow" style="background-color: #D1F4F0;">
+                <h5 class="modal-title border text text-center shadow " id="exampleModalPassword" style="margin: 0 90px;padding: 5px; min-width: 300px; border-radius: 10px;">Modifier votre mot de passe</h5>
+                <!-- <button type="button" class="btn-close border bg-danger" data-bs-dismiss="modal" aria-label="Close" style=" min-width: 20px;"></button> -->
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+                &nbsp;
+                <app-modif-password></app-modif-password>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
