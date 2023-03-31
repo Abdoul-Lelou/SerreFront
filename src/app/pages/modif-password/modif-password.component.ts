@@ -40,6 +40,13 @@ export class ModifPasswordComponent {
      if(this.registerForm.invalid){
       this.spin = false
       return ;
+    }else if(this.registerForm.value.password1 != this.registerForm.value.password2){
+      setTimeout(()=> this.spin = false, 2000)
+      this.formBuilder.group({
+        password1:[' '],
+        password2:[' ']
+    })
+     return this.toastr.warning("les deux mot de passe sont differents")
     }
 
   const user={
