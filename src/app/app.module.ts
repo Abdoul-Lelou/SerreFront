@@ -24,7 +24,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { TempHumComponent } from './pages/temp-hum/temp-hum.component';
 import { ModifPasswordComponent } from './pages/modif-password/modif-password.component';
 import { GooleMapsComponent } from './pages/goole-maps/goole-maps.component';
-
+import { SocketioService } from './services/socketio.service';
 
 
 
@@ -75,7 +75,7 @@ import { GooleMapsComponent } from './pages/goole-maps/goole-maps.component';
 
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JtwInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: JtwInterceptor, multi: true },SocketioService
   ],
   bootstrap: [AppComponent]
 })

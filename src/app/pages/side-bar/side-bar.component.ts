@@ -111,7 +111,10 @@ closeSerre() {
 
 reloadHome = () =>window.location.pathname ='home';
 
-logout = () =>window.location.pathname ='login';
+logout = () =>{
+  localStorage.removeItem('currentUser')
+  window.location.pathname ='login' 
+};
 
 
 }
