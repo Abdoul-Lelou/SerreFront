@@ -12,7 +12,7 @@ import { UserService } from './services/user.service';
 export class AppComponent {
   title = 'SerreFront';
   showLogin: boolean = false;
-
+  localStatus = localStorage.getItem('currentUser');
   constructor(private auth: UserService, private router: Router, private http: HttpClient, private socketService: SocketioService) {
 
     router.events.forEach((event) => {
@@ -20,7 +20,10 @@ export class AppComponent {
         if (event.url === '/login' || event.url === '/') {
           this.showLogin = true;
         } else {
-          this.showLogin = false; 
+          this.showLogin = false;
+          if(!this.localStatus){
+            window.location.pathname=''
+          } 
         }
       }
     });

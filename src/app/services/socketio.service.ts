@@ -30,9 +30,8 @@ export class SocketioService {
     });
   }
 
-  switchVentilo(){
-    this.socket = io(`${environment.apiUrl}`);  
-  
-    this.socket.emit('Allumer', '1')
-  }
+  // switchVentilo(){
+  //   this.socket = io(`${environment.apiUrl}`);  
+  //   this.socket.emit('Allumer', '1')
+  // }
 }
