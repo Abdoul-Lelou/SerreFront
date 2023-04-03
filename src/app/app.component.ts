@@ -21,9 +21,12 @@ export class AppComponent {
           this.showLogin = true;
         } else {
           this.showLogin = false;
-          if(!this.localStatus){
-            window.location.pathname=''
-          } 
+          // setTimeout(()=>{
+          //   if(!this.localStatus){
+          //     window.location.pathname=''
+          //   } 
+          // }, 1000);
+          
         }
       }
     });

@@ -105,6 +105,7 @@ export class LoginComponent  implements OnInit{
           console.log(res);
           let infoConnexion = res;
           if(infoConnexion.data){
+            // setTimeout(()=> this.router.navigateByUrl('home'), 1000);
             this.router.navigateByUrl('home');
           }
       },
