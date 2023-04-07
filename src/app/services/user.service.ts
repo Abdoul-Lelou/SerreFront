@@ -3,6 +3,8 @@ import { BehaviorSubject, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http'
+import { Serre } from '../models/serre';
+import { Arrosage } from '../models/arrosage';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +48,17 @@ export class UserService {
 
   update(id:any,user:User){
     return this.httpClient.patch<User>(`${environment.apiUrl}/api/update/${id}`,user)
+  }
+
+  getSerre(){
+    return this.httpClient.get<Serre>(`${environment.apiUrl}/serre/`)
+  }
+
+  updateArrosage(id:any,arrosage:Arrosage){
+    return this.httpClient.patch<Arrosage>(`${environment.apiUrl}/updateArrosage/${id}`,arrosage)
+  }
+
+  getArrosage(){
+    return this.httpClient.get<Arrosage>(`${environment.apiUrl}/arrosage/`)
   }
 }

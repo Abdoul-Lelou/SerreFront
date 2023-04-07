@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import tableauSol from '../../histo2.json';
  import tableau from '../../histo.json'; 
+import { UserService } from 'src/app/services/user.service';
 
 
 export interface DONNE {
@@ -28,8 +29,10 @@ searchText!: string;
 itemsperpage: number=4;
 p: number=1;
 
+dataSerreInfo:any;
 
- constructor() {}
+
+ constructor(private serreData: UserService) {}
  onclick(){
   this.showFormPass= true; 
  }
@@ -39,6 +42,7 @@ p: number=1;
   ngOnInit() {
    this.histo=tableau;
    console.log(this.histo)
+   this.getDataSerre();
   }
 
   search(e:any) {
@@ -48,5 +52,15 @@ p: number=1;
 
    })
     
+ }
+
+ getDataSerre(){
+  return this.serreData.getSerre().subscribe(
+    res=>{
+      console.log(res);
+      let data = res;
+      this.dataSerreInfo = data;
+    }
+  )
  }
 }

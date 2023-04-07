@@ -51,7 +51,6 @@ export class LoginComponent  implements OnInit{
 
 
   ngOnInit(){
-
       //validaions
 
     this.registerForm = this.formBuilder.group({
@@ -59,25 +58,7 @@ export class LoginComponent  implements OnInit{
       password :['', [Validators.required, Validators.minLength(6)]]
     })
 
-  //    const ws = new WebSocket('ws://localhost:8080');
-
-  //     ws.onopen = function() {
-  //       console.log('WebSocket connected');
-  //     };
-
-  //     ws.onmessage = function(event) {
-  //       console.log('Received message from server:', event.data);
-  //     };
-
-  //     const socket = io('https://localhost:3000');
-
-  //     // Listen for the 'message' event from the server
-  //     socket.on('message', (data) => {
-  //       console.log('Received message:', data);
-  //     });
-
-  //     // Send a message to the server
-  //     socket.emit('message', 'Hello from client!');
+    this.router.navigateByUrl('')
 
   }
 

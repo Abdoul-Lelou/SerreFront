@@ -1,7 +1,7 @@
 <!--Main Navigation-->
 <header class="z-3 position-absolute p-2 rounded-3">
     <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar shadow bg-light collapse"
+    <nav id="sidebarMenu" class="collapse mt-4 d-lg-block sidebar shadow bg-light collapse"
         style="background-color: #D1F4F0; ">
         <div class="position-sticky shadow h-100">
             <div class="list-group list-group-flush mx-3 mt-2 p-4"
@@ -14,23 +14,18 @@
                     data-toggle="tooltip" data-placement="top">
                     <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
                 </em>
-                <span role="button" (click)="switchToit()" title="Gestion toiture"
+                <span role="button" title="Gestion toiture"
                     class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
                     style="background-color: #D1F4F0;">
-                    <img src="../../assets/roofing.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
+                    <img *ngIf="switchRoof" src="../../assets/verinGIF.gif" alt="" width="90" height="90" srcset="" class="">
+                    <img *ngIf="!switchRoof" src="../../assets/roofing.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
                 </span>
-                <em role="button"  class="m-auto text text-success" (click)="switchToit()">
-                    <!-- <span class="material-icons" *ngIf="switchRoof" style="color:green">toggle_on</span>
-                    <span class="material-icons " *ngIf="!switchRoof" style="color:red">toggle_off</span> -->
-                    <svg xmlns="http://www.w3.org/2000/svg" *ngIf="switchRoof" width="25" height="25" fill="currentColor" class="bi bi-toggle2-on" viewBox="0 0 16 16">
-                        <path d="M7 5H3a3 3 0 0 0 0 6h4a4.995 4.995 0 0 1-.584-1H3a2 2 0 1 1 0-4h3.416c.156-.357.352-.692.584-1z"/>
-                        <path d="M16 8A5 5 0 1 1 6 8a5 5 0 0 1 10 0z"/>
-                      </svg>
-                    <svg style="color:red" xmlns="http://www.w3.org/2000/svg" *ngIf="!switchRoof"  width="25" height="25" fill="currentColor" class="bi bi-toggle2-off" viewBox="0 0 16 16">
-                        <path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 0 0-1-3h4a3 3 0 1 1 0 6H9z"/>
-                        <path d="M5 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1A5 5 0 1 0 5 3a5 5 0 0 0 0 10z"/>
-                      </svg>
-                </em>
+                <!-- <span *ngIf="switchRoof" role="button" (click)="switchToit()" title="Gestion toiture"
+                class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
+                style="background-color: #D1F4F0;">
+                <img src="../../assets/verinGIF.gif" alt="" width="90" height="90" srcset="" class="">
+            </span> -->
+                
 
             </div>
 

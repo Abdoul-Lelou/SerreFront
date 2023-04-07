@@ -55,7 +55,7 @@ export class ModifPasswordComponent {
   }
   const ids= localStorage.getItem('id')?.replace(/"/g, '');
   const id = ids?.split(' ').join('')
-  console.log(id);
+  
   
     return this.authService.update(id,user).subscribe(
       res=>{

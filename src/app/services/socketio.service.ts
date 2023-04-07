@@ -15,23 +15,39 @@ export class SocketioService {
   setupSocketConnection() {
     this.socket = io(`${environment.apiUrl}`);  
   
-    // this.socket.emit('my message', 'Hello there from Angular response.');
-
     this.socket.on('my broadcast', (data: string) => {
-      console.log(data);
-      if (!this.localStatus && data !="refuse") {
-        this.toastr.success("Accès autorisé", 'Carte valide')
+      console.log(data );
+      if (data !="refuse" && !this.localStatus) {
         localStorage.setItem('currentUser', JSON.stringify(data));
         window.location.pathname ='home'
         return;
-      }else if (!this.localStatus && data =="refuse"){
-        this.toastr.error("Accès refusé", 'Carte invalide')
       }
     });
   }
 
-  // switchVentilo(){
-  //   this.socket = io(`${environment.apiUrl}`);  
-  //   this.socket.emit('Allumer', '1')
-  // }
+  getTemp(){
+    this.socket = io(`${environment.apiUrl}`);
+    this.socket.on('temp', (data: string) => {
+      console.log('temp: '+data);
+      let temp = data;
+      return temp
+    });
+  }
+
+  getHum(){
+    this.socket = io(`${environment.apiUrl}`);
+    this.socket.on('hum', (data: string) => {
+      console.log('hum: '+data);
+      return data
+    });
+  }
+
+  getLum(){
+    this.socket = io(`${environment.apiUrl}`);
+    this.socket.on('lum', (data: string) => {
+      console.log('lum: '+data);
+      return data
+    });
+  }
+
 }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationStart, Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { io } from 'socket.io-client';
+import { SocketioService } from 'src/app/services/socketio.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-side-bar',
@@ -26,11 +29,16 @@ export class SideBarComponent implements OnInit{
   spin= false;
   errorSms:any;
   img: boolean = false;
+  socket: any;
   
-  constructor(private formBuilder:FormBuilder) {}
+  constructor(private formBuilder:FormBuilder, private socketService:SocketioService) {
+    this.socket = io(`${environment.apiUrl}`);
+  }
+  
 
   ngOnInit(): void {
     this.showTime();
+    this.switchToit();
     this.registerForm = this.formBuilder.group({
       password :['', [Validators.required, Validators.minLength(6)]],
       password1:['', [Validators.required, Validators.minLength(6)]],
@@ -50,11 +58,20 @@ export class SideBarComponent implements OnInit{
   }
 
   switchToit(){
-    this.switchRoof? this.switchRoof= false: this.switchRoof = true;
+    // this.switchRoof? this.switchRoof= false: this.switchRoof = true;
+    this.socket.on('toit', (msg:any)=>{
+      this.switchRoof= msg;
+    } )
   }
 
   switchFan(){
-    this.fan? this.fan= false: this.fan = true;
+    if(this.fan == true) {
+      this.fan= false
+      this.socket.emit("noFan", 0);
+    }else{
+      this.fan = true
+      this.socket.emit("isFan", 1);
+    }
   }
 
   switchInfo () {

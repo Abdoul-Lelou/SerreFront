@@ -7,7 +7,6 @@ export interface User {
     data?:{
         token?:String;
         userId?: String
-
     }
     message?:String
 }

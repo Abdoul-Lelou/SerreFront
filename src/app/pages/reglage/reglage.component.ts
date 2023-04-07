@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { io } from 'socket.io-client';
+import { SocketioService } from 'src/app/services/socketio.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-reglage',
@@ -18,11 +22,20 @@ import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstra
 // 	imports: [NgbDatepickerModule],
 // 	templateUrl: './modal-basic.html',
 // })
-export class ReglageComponent {
+export class ReglageComponent implements OnInit {
 	closeResult = '';
+	registerForm!:FormGroup;
+	socket: any;
+	constructor(private modalService: NgbModal, private formBuilder:FormBuilder, private socketService:SocketioService) {
+		this.socket = io(`${environment.apiUrl}`)
+	}
 
-	constructor(private modalService: NgbModal) {}
-
+	ngOnInit(): void {
+		this.registerForm = this.formBuilder.group({
+			codeAccess:['', [Validators.required]],
+		})
+		
+	}
 	open(content:any) {
 		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
 			(result) => {
@@ -42,5 +55,16 @@ export class ReglageComponent {
 		} else {
 			return `with: ${reason}`;
 		}
+	}
+
+	onCode(){
+		console.log(this.registerForm.value.codeAccess);
+		
+     if(this.registerForm.value.codeAccess == 7890){
+		this.socket.emit("openDoor", 1);
+		
+	 }else if(this.registerForm.value.codeAccess == 9078){
+		this.socket.emit("closeDoor", 0);
+	 }		
 	}
 }

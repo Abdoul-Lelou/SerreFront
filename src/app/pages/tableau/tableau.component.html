@@ -50,16 +50,16 @@
         </thead>
         <tbody>
         
-          <tr *ngFor="let i of histo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+          <tr *ngFor="let i of dataSerreInfo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
             <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
-            <td><p>{{i.date}}</p></td>
-            <td><p>{{i.temperature}}</p></td>
-            <td><p>{{i.humidite}}</p></td>
+            <td><p>{{i.dateInsertion}}</p></td>
+            <td><p>{{i.temp}}</p></td>
+            <td><p>{{i.hum}}</p></td>
 
           </tr>
         </tbody>
       </table>
-      <tr class="" *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+      <tr class="" *ngFor="let i of dataSerreInfo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
         <!-- <div class=""> -->
           <div class="pagination fixed-bottom justify-content-center">
             <pagination-controls (pageChange)="p = $event"></pagination-controls> 
@@ -139,11 +139,11 @@
           </thead>
           <tbody>
           
-            <tr *ngFor="let en of histoSol| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+            <tr *ngFor="let en of dataSerreInfo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
               <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
-              <td><p>{{en.date}}</p></td>
-              <td><p>{{en.humiditeSol}}</p></td>
-              <td><p>{{en.ensol}}</p></td>
+              <td><p>{{en.dateInsertion}}</p></td>
+              <td><p>{{en.sol}}</p></td>
+              <td><p>{{en.lum}}</p></td>
              
   
             </tr>
