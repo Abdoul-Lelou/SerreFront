@@ -15,7 +15,7 @@ export class SideBarComponent implements OnInit {
 
   imgArros: any = "https://media.discordapp.net/attachments/1033044458092118168/1087432078246813706/icons8-water-plants-66.png?width=72&height=72";
   
-  switchRoof: boolean = false; fan: boolean = false; showHome: boolean = false; showDashboard: boolean = true;
+  switchRoof: boolean = false; fan: boolean = true; showHome: boolean = false; showDashboard: boolean = true;
   showInfo: boolean = false; infoArrosage: boolean = true; titleArrosage: boolean = true; currentDate: any;
   registerForm!: FormGroup; arrosageForm!: FormGroup; submitted = false; spin = false; errorSms: any; 
   img: boolean = false; notChoise = false; socket: any; tabArrosage: any; matin: any; soir: any;
@@ -170,6 +170,7 @@ export class SideBarComponent implements OnInit {
 
   logout = () => {
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('door');
     window.location.pathname = 'login';
   };
 
