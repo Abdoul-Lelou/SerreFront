@@ -19,6 +19,8 @@ export class SocketioService {
       console.log(data );
       if (data !="refuse" && !this.localStatus) {
         localStorage.setItem('currentUser', JSON.stringify(data));
+        localStorage.setItem('id', JSON.stringify("6426d7fa66dd3621431204dc"));
+        
         window.location.pathname ='home'
         return;
       }

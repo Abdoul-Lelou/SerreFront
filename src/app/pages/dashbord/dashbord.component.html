@@ -169,7 +169,7 @@
             </span>
             <span *ngIf="prt">
               <p class="laa">Porte ouverte</p>
-               <img [src]="portOuv" alt="" id="lampe"> 
+              <img src="../../../assets/doorOpen.jpg" alt="" id="lampe"> 
             </span>
              <div class="form-check2 form-switch">
                <!-- <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" (click)="openPopup()" >
@@ -230,150 +230,7 @@
       </div>
     </div>
 </div> 
-<!-- LE POPUP POUR CODE DE DEVEROUILLAGE PORTE -->
 
-
-
-
-<!-- LE POPUP POUR INFOS DE LA SERRE -->
-               
-<!-- <div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
-<div class="modal-dialog" role="document" style="background-color: #FFFFFF; height: 90%;width: 800px;opacity: 1;padding: 0px;">
-  <div class="modal-content" style="background-color: white;height: 100%; width: 100%;padding: 0px;">
-    <div class="modal-header" style="background-color: #FFFFFF;height: 26px;padding-left: 94%;">
-      <button style="height: 25px;" type="button" class="close" aria-label="Close" (click)="closePopup()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-   
-    <div class="modal-body" style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px;">
-      <h6 style="color: #000000;font-weight: bolder; margin-bottom: -4px;">Informations sur la serre</h6>
-      <div class="d-flex justify-content" style="background-color: black; width: 100%; height: 100%;gap: 2%;padding: 0px;">
-        <div class="d-flex justify-content" style="background-color: #FFFFFF; width: 50%;height: 100%;padding: 5%; flex-direction: column;">
-          <img [src]="serre" alt="" style="width: 100%;height: 120px;margin-bottom: 16px;">
-          <h6 style="color: blue;font-weight: bolder;">Dimensions</h6>
-          <p style="color: #000000;font-weight: bold; padding-left: 4px;">2,44 x 3,67m</p>
-          <h6 style="color: blue;font-weight: bolder;">Capacité de production</h6>
-          <p style="color: #000000;font-weight: bold; padding-left: 4px;">300 kg/cycle</p>
-          <h6 style="color: blue;font-weight: bolder;">Espèces produits  </h6>
-          <p style="color: #000000;font-weight: bold;padding-left: 4px;">Tomate “Fandango” <img [src]="fandango" alt="" style="width: 30px;height: 32px;border-radius: 5px;"></p>
-        </div>
-        <div class="d-flex justify-content" style="background-color: #FFFFFF; width: 50%;height: 100%; flex-direction: column; padding: 5%;">
-          <h6 style="color: blue;font-weight: bolder;">Matériels utilisés</h6>
-          <p style="color: #000000;font-weight: bold;">Serre en tube d’assier, couverte de et dotée de 2 évents pour une ventilation améliorée, d'un seuil bas, d'un beau volume intérieur et d'une porte double pour un accès facile.</p>
-        </div>
-      </div>
-    </div>
-    <div class="modal-footer">
-    </div>
-  </div>
-</div>
-</div> -->
-
-<!-- FIN POPUP INFORMATIONS DE LA SERRE -->
-<!-- POPUP Affichage données  ARROSAGE -->
-
-<!-- <div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
-<div class="modal-dialog" role="document" style="background-color: #FFFFFF; height: 90%;width: 800px;opacity: 1;padding: 0px;">
-  <div class="modal-content" style="background-color: white;height: 100%; width: 100%;padding: 0px;">
-    <div class="modal-header" style="background-color: #FFFFFF;height: 26px;padding-left: 94%;">
-      <button style="height: 25px;" type="button" class="close" aria-label="Close" (click)="closePopup()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-   
-    <div class="modal-body" style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px 10px;display: flex;flex-direction: column;gap: 8px;padding-bottom: 16px;">
-       <div style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
-          <img [src]="imArros" alt="" style="width: 70%; height: 100%;">
-       </div>
-       <p style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Informations d’arrosage</p>
-       <div class="d-flex justify-content" style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
-          <div class="d-flex justify-content" style="gap: 100px;">
-            <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
-          </div>
-          <div class="d-flex justify-content" style="gap: 140px;">
-            <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">06h 00</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">70s</p>
-          </div>
-          <div class="d-flex justify-content" style="gap: 140px;">
-            <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">19h 00</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
-          </div>
-          <button style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
-       </div>
-       
-    </div>
-   
-  </div>
-</div>
-</div> -->
-
-<!-- FIN POPUP Affichage données ARROSAGE  ET DEBUT POPUP PARAMETRAGE ARROSAGE-->
-
-
-<!-- <div class="modal" style="margin-top: 95px; width: 80%;height: 500px;margin-left: 20%; background-color: black;opacity: 0.9; padding: 2px;" tabindex="-1"role="dialog"[ngStyle]="{'display':displayStyle}">
-<div class="modal-dialog" role="document" style="background-color: #FFFFFF; height: 90%;width: 800px;opacity: 1;padding: 0px;">
-  <div class="modal-content" style="background-color: white;height: 100%; width: 100%;padding: 0px;">
-    <div class="modal-header" style="background-color: #FFFFFF;height: 26px;padding-left: 94%;">
-      <button style="height: 25px;" type="button" class="close" aria-label="Close" (click)="closePopup()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-   
-    <div class="modal-body" style="background-color: #FFFFFF; opacity: 1; height: 100%; width: 100%;padding: 0px 10px;display: flex;flex-direction: column;gap: 8px;padding-bottom: 16px;">
-       <div style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
-          <img [src]="imArros" alt="" style="width: 70%; height: 100%;">
-       </div>
-       <p style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Paramétrage arrosage de la serre</p>
-       <div class="d-flex justify-content" style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
-          <p style="text-align: center;color: #000000;font-weight: bold;margin-bottom: -3px;">Définir vos heures et durées  d’arrosage</p>
-          <div class="d-flex justify-content" style="gap: 170px;margin-bottom: -3px;">
-            <p style="color: #000000;font-weight: bold; text-align: center;">Premier arrosage</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">Second arrosage</p>
-            
-          </div>
-          <div class="d-flex justify-content" style="gap: 310px;">
-            
-            <div class="input-group mb-3" style="width: 90px;">
-              <div >
-                <label  style="height: 20px;" class="input-group-text" for="inputGroupSelect01">Heure1</label>
-              </div>
-              <select class="custom-select" id="inputGroupSelect01" >
-                <option selected>6h 00</option>
-                <option value="1">7h 00</option>
-                <option value="2">08h 00</option>
-              </select>
-            </div>
-            
-            <div class="input-group mb-3" style="width: 90px;">
-              <div class="input-group-prepend">
-                <label style="height: 20px;" class="input-group-text" for="inputGroupSelect01">Heure2</label>
-              </div>
-              <select class="custom-select" id="inputGroupSelect01">
-                <option selected>17h 00</option>
-                <option value="1">18h 00</option>
-                <option value="2">19h 00</option>
-              </select>
-            </div>
-            
-          </div>
-          <div class="d-flex justify-content" style="gap: 310px;margin-bottom: -3px;">
-            <p style="color: #000000;font-weight: bold; text-align: center;">Durée1</p>
-            <p style="color: #000000;font-weight: bold; text-align: center; ">Durée2</p>
-
-          </div>
-          <button style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
-       </div>
-       
-    </div>
-   
-  </div>
-</div>
-</div> -->
 
 
 

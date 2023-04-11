@@ -62,9 +62,14 @@ export class ReglageComponent implements OnInit {
 		
      if(this.registerForm.value.codeAccess == 7890){
 		this.socket.emit("openDoor", 1);
-		
+		localStorage.setItem('door', '1')
 	 }else if(this.registerForm.value.codeAccess == 9078){
 		this.socket.emit("closeDoor", 0);
+		localStorage.setItem('door', '0')
 	 }		
+
+	 setTimeout(() => {
+		this.ngOnInit()
+	 }, 1000);
 	}
 }

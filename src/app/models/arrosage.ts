@@ -1,5 +1,8 @@
 export interface Arrosage {
+    _id?: any
     matin?: String,
     soir?: String,
-    dure?: Number
+    dureSoir?: String,
+    dureMatin?: String,
+    message?:String
 }

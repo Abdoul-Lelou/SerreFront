@@ -13,10 +13,10 @@ import { UserService } from '../services/user.service';
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
       let currentUser = this.userService.currentUserValue;
-        if (currentUser && currentUser.token) {
+        if (currentUser && currentUser) {
             req = req.clone({
                 setHeaders: {
-                    Authorization: `Bearer ${currentUser.token}`
+                    Authorization: `Bearer ${currentUser}`
                 }
             });
         }

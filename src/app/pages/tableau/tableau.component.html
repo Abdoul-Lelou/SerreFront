@@ -52,7 +52,7 @@
         
           <tr *ngFor="let i of dataSerreInfo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
             <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
-            <td><p>{{i.dateInsertion}}</p></td>
+            <td><p>{{i.dateInsertion | date}}</p></td>
             <td><p>{{i.temp}}</p></td>
             <td><p>{{i.hum}}</p></td>
 
@@ -90,7 +90,7 @@
     Historique de l'ensoleillement et l'humidités du sol
   </div>
 
-  <div *ngIf="showFormPass" class=" shadow-none   bg-light rounded" id="haut">
+  <div *ngIf="showFormPass" class=" mb-4 shadow-none   bg-light rounded" id="haut">
     <!-- <div class="header">
   
     </div> -->
@@ -141,7 +141,7 @@
           
             <tr *ngFor="let en of dataSerreInfo| filter:searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
               <!-- <th rowspan="3" scope="row" class="text-center">Temperature en °C</th> -->
-              <td><p>{{en.dateInsertion}}</p></td>
+              <td><p>{{en.dateInsertion }}</p></td>
               <td><p>{{en.sol}}</p></td>
               <td><p>{{en.lum}}</p></td>
              
@@ -149,7 +149,7 @@
             </tr>
           </tbody>
         </table>
-        <tr class="" *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
+        <tr style="margin-bottom: 2%;" class="" *ngFor="let i of histo| filter: searchText | paginate: { itemsPerPage:  itemsperpage, currentPage: p}">
           <!-- <div class=""> -->
             <div class="pagination fixed-bottom justify-content-center">
               <pagination-controls (pageChange)="p = $event"></pagination-controls> 

@@ -58,7 +58,11 @@ export class UserService {
     return this.httpClient.patch<Arrosage>(`${environment.apiUrl}/updateArrosage/${id}`,arrosage)
   }
 
+  pomper(arrosage:Arrosage){
+    return this.httpClient.patch<Arrosage>(`${environment.apiUrl}/postArrosage`,arrosage)
+  }
+
   getArrosage(){
-    return this.httpClient.get<Arrosage>(`${environment.apiUrl}/arrosage/`)
+    return this.httpClient.get<Arrosage>(`${environment.apiUrl}/arrosage`)
   }
 }

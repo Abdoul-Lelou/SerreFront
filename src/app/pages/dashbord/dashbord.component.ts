@@ -16,12 +16,16 @@ export class DashbordComponent implements OnInit {
   toi:any;
   buzzerStatus= false;
 
+
+
   constructor(private socketService:SocketioService){
     this.socket = io(`${environment.apiUrl}`);
   }
 
   ngOnInit() {
     
+    console.log("la porte :",this.prt)
+
     this.socket.on('temp', (data: number) => {
       console.log('temp: '+data);
       this.realtimeTemp = data;
@@ -69,7 +73,8 @@ export class DashbordComponent implements OnInit {
   aroz:boolean = false;
 
   cris:boolean = true;
-  prt:boolean = false;
+  prt = localStorage.getItem('door') //:boolean = false;
+  
   lamp:boolean = false;
   cheminImage:any = "https://media.discordapp.net/attachments/1033044458092118168/1087419548929634408/vvv.png?width=498&height=374";
   imEnsoleillement:any="https://media.discordapp.net/attachments/1033044458092118168/1087422962031923302/nnn.png?width=498&height=374";
@@ -111,8 +116,6 @@ export class DashbordComponent implements OnInit {
   }
 
   switchPorte(){
-    
-      // this.openPopup();
     
     
   }

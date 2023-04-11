@@ -6,26 +6,28 @@
         <div class="position-sticky shadow h-100">
             <div class="list-group list-group-flush mx-3 mt-2 p-4"
                 style="background-color: #D1F4F0; border-radius: 10px 0px 0 0">
-                <img src="../../assets/logo.jpeg" alt="" width="130" height="130" role="button" class="rounded-circle m-auto mb-2" title="Accueil"
-                    (click)="reloadHome()">
+                <img src="../../assets/logo.jpeg" alt="" width="130" height="130" role="button"
+                    class="rounded-circle m-auto mb-2" title="Accueil" (click)="reloadHome()">
 
                 <em role="button" class="list-group-item list-group-item-action py-2  d-flex justify-content-center"
-                    style="background-color: #D1F4F0;" data-bs-toggle="modal" href="#exampleModal" role="button" title="Systeme Arrosage"
-                    data-toggle="tooltip" data-placement="top">
+                    style="background-color: #D1F4F0;" data-bs-toggle="modal" href="#exampleModal" role="button"
+                    title="Systeme Arrosage" data-toggle="tooltip" data-placement="top">
                     <img src="../../assets/arroser.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
                 </em>
                 <span role="button" title="Gestion toiture"
                     class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
                     style="background-color: #D1F4F0;">
-                    <img *ngIf="switchRoof" src="../../assets/verinGIF.gif" alt="" width="90" height="90" srcset="" class="">
-                    <img *ngIf="!switchRoof" src="../../assets/roofing.png" alt="" width="90" height="90" srcset="" class="rounded-circle">
+                    <img *ngIf="switchRoof" src="../../assets/verinGIF.gif" alt="" width="90" height="90" srcset=""
+                        class="">
+                    <img *ngIf="!switchRoof" src="../../assets/roofing.png" alt="" width="90" height="90" srcset=""
+                        class="rounded-circle">
                 </span>
                 <!-- <span *ngIf="switchRoof" role="button" (click)="switchToit()" title="Gestion toiture"
                 class="list-group-item list-group-item-action py-2  d-flex justify-content-center "
                 style="background-color: #D1F4F0;">
                 <img src="../../assets/verinGIF.gif" alt="" width="90" height="90" srcset="" class="">
             </span> -->
-                
+
 
             </div>
 
@@ -37,28 +39,33 @@
                 <div class=" mb-2 shadow" style="background-color: #D1F4F0; ">
                     <span role="button" (click)="switchFan()" *ngIf="fan" style="background-color: #D1F4F0;"
                         class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
-                        <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012082438185/fanGIF.gif"
-                            alt="" width="90" height="90" srcset="" class="rounded-circle">
-                    </span>
-                    <span role="button" (click)="switchFan()" *ngIf="!fan" style="background-color: #D1F4F0;"
-                        class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
                         <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012443140096/fanPNG.png"
                             alt="" width="90" height="90" srcset="" class="rounded-circle bg-light">
                     </span>
+                    <span role="button" (click)="switchFan()" *ngIf="!fan" style="background-color: #D1F4F0;"
+                        class="list-group-item list-group-item-action py-2  d-flex justify-content-center ">
+    
+                            <img src="https://media.discordapp.net/attachments/1033044458092118168/1088991012082438185/fanGIF.gif"
+                            alt="" width="90" height="90" srcset="" class="rounded-circle">
+                    </span>
 
-                    
-                    <em role="button" class="m-auto  text text-success d-flex justify-content-center" (click)="switchFan()">
+
+                    <em role="button" class="m-auto  text text-success d-flex justify-content-center"
+                        (click)="switchFan()">
                         <!-- <span class="material-icons" *ngIf="fan" style="color:green">toggle_on</span>
                         <span class="material-icons " *ngIf="!fan" style="color:red">toggle_off</span> -->
 
-                        <svg xmlns="http://www.w3.org/2000/svg" *ngIf="fan" width="25" height="25" fill="currentColor" class="bi bi-toggle2-on" viewBox="0 0 16 16">
-                            <path d="M7 5H3a3 3 0 0 0 0 6h4a4.995 4.995 0 0 1-.584-1H3a2 2 0 1 1 0-4h3.416c.156-.357.352-.692.584-1z"/>
-                            <path d="M16 8A5 5 0 1 1 6 8a5 5 0 0 1 10 0z"/>
-                          </svg>
-                        <svg style="color:red" xmlns="http://www.w3.org/2000/svg" *ngIf="!fan"  width="25" height="25" fill="currentColor" class="bi bi-toggle2-off" viewBox="0 0 16 16">
-                            <path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 0 0-1-3h4a3 3 0 1 1 0 6H9z"/>
-                            <path d="M5 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1A5 5 0 1 0 5 3a5 5 0 0 0 0 10z"/>
-                          </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" *ngIf="!fan" width="25" height="25" fill="currentColor"
+                            class="bi bi-toggle2-on" viewBox="0 0 16 16">
+                            <path
+                                d="M7 5H3a3 3 0 0 0 0 6h4a4.995 4.995 0 0 1-.584-1H3a2 2 0 1 1 0-4h3.416c.156-.357.352-.692.584-1z" />
+                            <path d="M16 8A5 5 0 1 1 6 8a5 5 0 0 1 10 0z" />
+                        </svg>
+                        <svg style="color:red" xmlns="http://www.w3.org/2000/svg" *ngIf="fan" width="25" height="25"
+                            fill="currentColor" class="bi bi-toggle2-off" viewBox="0 0 16 16">
+                            <path d="M9 11c.628-.836 1-1.874 1-3a4.978 4.978 0 0 0-1-3h4a3 3 0 1 1 0 6H9z" />
+                            <path d="M5 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0 1A5 5 0 1 0 5 3a5 5 0 0 0 0 10z" />
+                        </svg>
                     </em>
 
                 </div>
@@ -90,38 +97,47 @@
         <div class="container p-2  w-100 nav shadow  d-flex justify-content-around border mb-4">
             <!-- Toggle button -->
             <!-- Brand -->
-            <a role="button" class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalToggle" role="button"
-                data-toggle="tooltip" data-placement="top" title="Info serre">
+            <a role="button" class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalToggle"
+                role="button" data-toggle="tooltip" data-placement="top" title="Info serre">
                 <!-- <span class="material-icons" style=" size: 40px;">info</span> -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                    class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                </svg>
             </a>
 
-            <a role="button" role="button" class="navbar-brand text text-danger" href="#" data-toggle="tooltip" data-placement="top"
-                title="localisation" data-bs-toggle="modal" href="#exampleModalMaps">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
-                    <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-                  </svg>
+            <a role="button" role="button" class="navbar-brand text text-danger" href="#" data-toggle="tooltip"
+                data-placement="top" title="localisation" data-bs-toggle="modal" href="#exampleModalMaps">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
             </a>
 
-            <a role="button" class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalPassword" role="button"
-            data-toggle="tooltip" data-placement="top" 
-                title="Mot de passe">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
-                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
-                  </svg>
+            <a role="button" class="navbar-brand text text-danger" data-bs-toggle="modal" href="#exampleModalPassword"
+                role="button" data-toggle="tooltip" data-placement="top" title="Mot de passe">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                    class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                    <path
+                        d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+                    <path fill-rule="evenodd"
+                        d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+                </svg>
             </a>
 
-            <a  (click)="logout()" role="button" class="navbar-brand text text-danger" href="#" data-toggle="tooltip" routerLink="login"
-                data-placement="top" title="Deconnexion">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
-                  </svg>
+            <a (click)="logout()" role="button" class="navbar-brand text text-danger" href="#" data-toggle="tooltip"
+                routerLink="login" data-placement="top" title="Deconnexion">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                    class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                    <path fill-rule="evenodd"
+                        d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                </svg>
             </a>
 
 
@@ -163,25 +179,25 @@
                         style="background-color: #94e9df;width: 70%;height: 40%;margin-left: 65px; box-shadow: 1px 3px 1px gainsboro;padding: 2% 2%;padding-left: 80px;margin-bottom: 10px;">
                         <img [src]="imgArros" alt="" style="width: 70%; height: 100%;">
                     </div>
-                    <p style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Informations
-                        d’arrosage</p>
+                    <!-- <p style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Informations
+                        d’arrosage</p> -->
                     <div class="d-flex justify-content"
                         style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #94e9df;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
-                        <div class="d-flex justify-content" style="gap: 100px;">
+                        <!-- <div class="d-flex justify-content" style="gap: 100px;">
                             <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
                             <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
                             <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
                         </div>
                         <div class="d-flex justify-content" style="gap: 140px;">
                             <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
-                            <p style="color: #000000;font-weight: bold; text-align: center; ">06h 00</p>
-                            <p style="color: #000000;font-weight: bold; text-align: center; ">70s</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{soir}}</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{soir}}</p>
                         </div>
                         <div class="d-flex justify-content" style="gap: 140px;">
                             <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
-                            <p style="color: #000000;font-weight: bold; text-align: center; ">19h 00</p>
-                            <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
-                        </div>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{soir}}</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{soir}}</p>
+                        </div> -->
                         <button
                             style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
                     </div>
@@ -210,12 +226,15 @@
                     <p *ngIf="titleArrosage"
                         style="color: #000000;font-weight: bold;text-align: center;margin-bottom: -1px;">Reglage
                         d'arrosage</p>
-                    <p *ngIf="!titleArrosage"
+                    <p *ngIf="!titleArrosage && !notChoise"
                         style="text-align: center;color: #000000;font-weight: bold;margin-bottom: -3px;">Définir vos
                         heures et durées d’arrosage</p>
+                    <p *ngIf="notChoise"
+                        style="text-align: center;color: #db0707;font-weight: bold;margin-bottom: -3px;">Veillez selectionnez l'heure</p>    
+                    <!-- <p class=" text-danger" *ngIf="notChoise">Veillez selectionnez l'heure</p>     -->
                     <div *ngIf="infoArrosage" class="d-flex justify-content"
                         style="flex-direction: column;gap: 50px;width: 100%;height: 52%;background-color: #D1F4F0;padding: 9px 10px; text-align: center; box-shadow: -1.5px 3px 1px black; border-radius: 4px 4px;flex-direction: column; gap: 12px;padding-left: 20px;">
-                        <div class="d-flex justify-content" style="gap: 100px;">
+                        <!-- <div class="d-flex justify-content" style="gap: 100px;">
                             <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
                             <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
                             <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
@@ -229,7 +248,24 @@
                             <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
                             <p style="color: #000000;font-weight: bold; text-align: center; ">19h00</p>
                             <p style="color: #000000;font-weight: bold; text-align: center; ">45s</p>
+                        </div> -->
+
+                        <div class="d-flex justify-content" style="gap: 100px;">
+                            <p style="color: #000000;font-weight: bold; text-align: center;">Ordre</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">Heures d’arrosage</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">Durée</p>
                         </div>
+                        <div class="d-flex justify-content" style="gap: 140px;">
+                            <p style="color: #000000;font-weight: bold; text-align: center;">Premier</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{matin}}h</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{dureMatin}}s</p>
+                        </div>
+                        <div class="d-flex justify-content" style="gap: 140px;">
+                            <p style="color: #000000;font-weight: bold; text-align: center;">Second</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{soir}}h</p>
+                            <p style="color: #000000;font-weight: bold; text-align: center; ">{{dureSoir}}s</p>
+                        </div>
+
                         <button (click)="switchArrosage()"
                             style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Modifier</button>
                     </div>
@@ -263,75 +299,72 @@
                             <p style="color: #000000;font-weight: bold; text-align: center; ">Second arrosage</p>
 
                         </div>
-                        <div class="d-flex justify-content-between border  bg-light shadow"
-                            style="width: 90%; margin: 0 auto;">
+                        <form [formGroup]="arrosageForm">    
+                            <div class="d-flex justify-content-between border  bg-light shadow"
+                                style="width: 90%; margin: 0 auto;">
 
-                            <div class="input-group " style="width: 90px;">
-                                <!-- <div>
-                        <label style="height: 20px;" class="input-group-text"
-                            for="inputGroupSelect01">Heure1</label>
-                    </div> -->
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                    id="inputGroupSelect01">
-                                    <option selected>6h00</option>
-                                    <option value="1">7h00</option>
-                                    <option value="2">08h00</option>
-                                </select>
+                                
+                                    <div class="input-group " style="width: 90px;">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                            id="inputGroupSelect01" formControlName="heure1">
+                                            <!-- <option selected="selected" value="{{matin}}">{{matin}}</option> -->
+                                            <option selected="selected" value="06">6h00</option>
+                                            <option value="07">7h00</option>
+                                            <option value="08">08h00</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group " style="width: 90px;">
+                                        <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                            id="inputGroupSelect01" formControlName="heure2">
+                                            <!-- <option selected="selected" value="{{soir}}">{{soir}}</option> -->
+                                            <option selected value="17">17h 00</option>
+                                            <option value="18">18h 00</option>
+                                            <option value="19">19h 00</option>
+                                        </select>
+                                    </div>
+
+                        
+                            </div>
+                            <div class="d-flex justify-content-center" style="gap: 270px;margin-bottom: -3px;">
+                                <p style="color: #000000;font-weight: bold; text-align: center;">Durée1</p>
+                                <p style="color: #000000;font-weight: bold; text-align: center; ">Durée2</p>
+
                             </div>
 
-                            <div class="input-group " style="width: 90px;">
-                                <!-- <div class="input-group-prepend">
-                        <label style="height: 20px;" class="input-group-text"
-                            for="inputGroupSelect01">Heure2</label>
-                    </div> -->
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                    id="inputGroupSelect01">
-                                    <option selected>17h 00</option>
-                                    <option value="1">18h 00</option>
-                                    <option value="2">19h 00</option>
-                                </select>
-                            </div>
+                            <div class="d-flex justify-content-between border  bg-light shadow"
+                                style="width: 90%; margin: 0 auto;">
 
+                                <div class="input-group " style="width: 90px;">
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        id="inputGroupSelect01" formControlName="dure1">
+                                        <!-- <option selected value="{{dureMatin}}">{{dureMatin}}</option> -->
+                                        <option selected value="25">25s</option>
+                                        <option value="45">45s</option>
+                                        <option value="60">60s</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-group " style="width: 90px;">
+                                    <!-- <div class="input-group-prepend">
+                            <label style="height: 20px;" class="input-group-text"
+                                for="inputGroupSelect01">Heure2</label>
+                        </div> -->
+                                    <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                                        id="inputGroupSelect01" formControlName="dure2">
+                                        <!-- <option selected value="{{dureSoir}}">{{dureSoir}}</option> -->
+                                        <option selected value="25">25s</option>
+                                        <option value="45">45s</option>
+                                        <option value="60">60s</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            
+                            <button class="mt-4" (click)="onArroge()"
+                                style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Appliquer</button>
+                        </form>
                         </div>
-                        <div class="d-flex justify-content-center" style="gap: 270px;margin-bottom: -3px;">
-                            <p style="color: #000000;font-weight: bold; text-align: center;">Durée1</p>
-                            <p style="color: #000000;font-weight: bold; text-align: center; ">Durée2</p>
-
-                        </div>
-
-                        <div class="d-flex justify-content-between border  bg-light shadow"
-                            style="width: 90%; margin: 0 auto;">
-
-                            <div class="input-group " style="width: 90px;">
-                                <!-- <div>
-                        <label style="height: 20px;" class="input-group-text"
-                            for="inputGroupSelect01">Heure1</label>
-                    </div> -->
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                    id="inputGroupSelect01">
-                                    <option selected>25s</option>
-                                    <option value="1">45s</option>
-                                    <option value="2">60s</option>
-                                </select>
-                            </div>
-
-                            <div class="input-group " style="width: 90px;">
-                                <!-- <div class="input-group-prepend">
-                        <label style="height: 20px;" class="input-group-text"
-                            for="inputGroupSelect01">Heure2</label>
-                    </div> -->
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example"
-                                    id="inputGroupSelect01">
-                                    <option selected>25s</option>
-                                    <option value="1">45s</option>
-                                    <option value="2">60s</option>
-                                </select>
-                            </div>
-
-                        </div>
-                        <button (click)="switchArrosage()"
-                            style="width: 300px;text-align: center; background-color: #34BA67;height: 30px; margin-left: 72px; border-bottom-right-radius: 17px;border-top-left-radius: 17px;color: #000000;font-weight: bold;">Appliquer</button>
-                    </div>
 
                 </div>
             </div>
@@ -350,7 +383,8 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content shadow" style="background-color: #D1F4F0">
             <div class="modal-header shadow" style="background-color: #D1F4F0;">
-                <h5 class="modal-title shadow p-2" id="exampleModalToggleLabel" style="margin: 0 auto; border-radius: 10px;">Information du serre</h5>
+                <h5 class="modal-title shadow p-2" id="exampleModalToggleLabel"
+                    style="margin: 0 auto; border-radius: 10px;">Information de la serre</h5>
                 <!-- <span type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span> -->
             </div>
             <div class="modal-body d-flex justify-content-center">
@@ -403,11 +437,13 @@
 
 
 <div class="modal modal-md fade" id="exampleModalPassword" aria-hidden="true" aria-labelledby="exampleModalPassword"
-    tabindex="-1" >
+    tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content shadow" style="background-color: #D1F4F0;">
             <div class="modal-header shadow" style="background-color: #D1F4F0;">
-                <h5 class="modal-title border text text-center shadow " id="exampleModalPassword" style="margin: 0 90px;padding: 5px; min-width: 300px; border-radius: 10px;">Modifier votre mot de passe</h5>
+                <h5 class="modal-title border text text-center shadow " id="exampleModalPassword"
+                    style="margin: 0 90px;padding: 5px; min-width: 300px; border-radius: 10px;">Modifier votre mot de
+                    passe</h5>
                 <!-- <button type="button" class="btn-close border bg-danger" data-bs-dismiss="modal" aria-label="Close" style=" min-width: 20px;"></button> -->
             </div>
             <div class="modal-body d-flex justify-content-center">
@@ -423,7 +459,8 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content shadow" style="background-color: #D1F4F0">
             <div class="modal-header shadow" style="background-color: #D1F4F0;">
-                <h5 class="modal-title shadow p-2" id="exampleModalMapsLabel" style="margin: 0 auto; border-radius: 10px;">Information du serre</h5>
+                <h5 class="modal-title shadow p-2" id="exampleModalMapsLabel"
+                    style="margin: 0 auto; border-radius: 10px;">Geolocalisation de la serre</h5>
                 <!-- <span type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></span> -->
             </div>
             <div class="modal-body d-flex justify-content-center">
@@ -463,9 +500,12 @@
                         
                     </div>
                 </div> -->
-                    <!-- <app-goole-maps></app-goole-maps> -->
+                <!-- <app-goole-maps></app-goole-maps> -->
 
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.0507557503092!2d-17.471413485713548!3d14.709721789733042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b9452a5ad5%3A0xb798e476c4492163!2sFabrique%20Simplon%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2ssn!4v1679420405682!5m2!1sfr!2ssn" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.0507557503092!2d-17.471413485713548!3d14.709721789733042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec173b9452a5ad5%3A0xb798e476c4492163!2sFabrique%20Simplon%20S%C3%A9n%C3%A9gal!5e0!3m2!1sfr!2ssn!4v1679420405682!5m2!1sfr!2ssn"
+                    width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
 
@@ -473,6 +513,3 @@
         </div>
     </div>
 </div>
-
-
-
