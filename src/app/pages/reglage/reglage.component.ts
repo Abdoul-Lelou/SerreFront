@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 import { io } from 'socket.io-client';
 import { SocketioService } from 'src/app/services/socketio.service';
 import { environment } from 'src/environments/environment';
@@ -26,7 +27,7 @@ export class ReglageComponent implements OnInit {
 	closeResult = '';
 	registerForm!:FormGroup;
 	socket: any;
-	constructor(private modalService: NgbModal, private formBuilder:FormBuilder, private socketService:SocketioService) {
+	constructor(private modalService: NgbModal, private formBuilder:FormBuilder, private socketService:SocketioService,  private toastr: ToastrService) {
 		this.socket = io(`${environment.apiUrl}`)
 	}
 
@@ -63,13 +64,17 @@ export class ReglageComponent implements OnInit {
      if(this.registerForm.value.codeAccess == 7890){
 		this.socket.emit("openDoor", 1);
 		localStorage.setItem('door', '1')
+		this.toastr.info('Porte ouverte')
 	 }else if(this.registerForm.value.codeAccess == 9078){
 		this.socket.emit("closeDoor", 0);
 		localStorage.setItem('door', '0')
+		this.toastr.info('Porte fermée')
+	 }else{
+		this.toastr.error('Code d\'accès incorrect')
 	 }		
 
 	 setTimeout(() => {
 		this.ngOnInit()
-	 }, 1000);
+	 }, 2000);
 	}
 }

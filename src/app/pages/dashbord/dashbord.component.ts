@@ -2,6 +2,9 @@ import { Component,  OnInit} from '@angular/core';
 import { SocketioService } from 'src/app/services/socketio.service';
 import { io } from 'socket.io-client';
 import { environment } from 'src/environments/environment';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashbord',
@@ -15,16 +18,20 @@ export class DashbordComponent implements OnInit {
   ObjetJSON:any;
   toi:any;
   buzzerStatus= false;
+  registerForm!:FormGroup;
+  closeResult = '';
 
-
-
-  constructor(private socketService:SocketioService){
+  constructor(private socketService:SocketioService,  private formBuilder:FormBuilder,private modalService: NgbModal,  private toastr: ToastrService){
     this.socket = io(`${environment.apiUrl}`);
   }
 
   ngOnInit() {
     
     console.log("la porte :",this.prt)
+
+    this.registerForm = this.formBuilder.group({
+			codeAccess:['', [Validators.required]],
+		})
 
     this.socket.on('temp', (data: number) => {
       console.log('temp: '+data);
@@ -165,6 +172,47 @@ switchHistorique(){
   }else{
     this.showHistorique = true
   }
+}
+
+open(content:any) {
+  this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+    (result) => {
+      this.closeResult = `Closed with: ${result}`;
+    },
+    (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    },
+  );
+}
+
+private getDismissReason(reason: any): string {
+  if (reason === ModalDismissReasons.ESC) {
+    return 'by pressing ESC';
+  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+    return 'by clicking on a backdrop';
+  } else {
+    return `with: ${reason}`;
+  }
+}
+
+onCode(){
+  console.log(this.registerForm.value.codeAccess);
+  
+   if(this.registerForm.value.codeAccess == 7890){
+  this.socket.emit("openDoor", 1);
+  localStorage.setItem('door', '1')
+  this.toastr.info('Porte ouverte')
+ }else if(this.registerForm.value.codeAccess == 9078){
+  this.socket.emit("closeDoor", 0);
+  localStorage.setItem('door', '0')
+  this.toastr.info('Porte fermée')
+ }else{
+  this.toastr.error('Code d\'accès incorrect')
+ }		
+
+ setTimeout(() => {
+  this.ngOnInit()
+ }, 2000);
 }
  
 
