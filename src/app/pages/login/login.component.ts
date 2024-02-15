@@ -79,7 +79,8 @@ export class LoginComponent  implements OnInit{
       email: this.registerForm.value.email,
       password: this.registerForm.value.password
     }
-    // console.log(user);
+    // this.router.navigateByUrl('home');
+    console.log(user);
     
     return this.authService.getConnexion(user).subscribe(
       res=>{
