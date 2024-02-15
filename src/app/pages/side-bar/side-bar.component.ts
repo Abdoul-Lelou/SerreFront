@@ -144,6 +144,7 @@ export class SideBarComponent implements OnInit {
 
     this.currentDate = mm + '/' + dd + '/' + yyyy;
   }
+  
 
 
   displayStyle = "none";

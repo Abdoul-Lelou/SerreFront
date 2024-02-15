@@ -33,7 +33,7 @@ export class UserService {
   //Connexion de l'utilisateur 
 
   getConnexion(user:User){
-    return this.httpClient.post<User>(`${environment.apiUrl}/api/login`,user).
+    return this.httpClient.post<User>(`${environment.apiUrl}/login`,user).
       pipe(map(user => {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         //Ceci permet de garder l'utilisateur connecté entre les differentes pages
@@ -47,7 +47,7 @@ export class UserService {
   }
 
   update(id:any,user:User){
-    return this.httpClient.patch<User>(`${environment.apiUrl}/api/update/${id}`,user)
+    return this.httpClient.patch<User>(`${environment.apiUrl}/update/${id}`,user)
   }
 
   getSerre(){
